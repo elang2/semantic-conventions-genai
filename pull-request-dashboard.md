@@ -11,7 +11,7 @@
 | [gen-ai: make input-messages BlobPart content optional and add stripped_reason (#144)](https://github.com/open-telemetry/semantic-conventions-genai/pull/144) | Mandark-droid | lmolkova<br>trask | ✅ | ✅ | 1d |
 | [gen-ai: model agent-to-agent handoff as execute_tool span (#98)](https://github.com/open-telemetry/semantic-conventions-genai/pull/98) | Krishnachaitanyakc | lmolkova<br>MikeGoldsmith&nbsp;✅<br>trask | ✅ | ✅ | 23h |
 | [Add `gen_ai.request.reasoning.level` attribute (#258)](https://github.com/open-telemetry/semantic-conventions-genai/pull/258) | katsuhisa91 | JWinermaSplunk&nbsp;✅<br>lmolkova<br>trask | ❌ | ✅ | 22h |
-| [Avoid refreshed reviewer-wait initial notifications (#286)](https://github.com/open-telemetry/semantic-conventions-genai/pull/286) | trask |  | ✅ | ✅ | 22m |
+| [Avoid refreshed reviewer-wait initial notifications (#286)](https://github.com/open-telemetry/semantic-conventions-genai/pull/286) | trask |  | ✅ | ✅ | 23m |
 | [Propose GenAI agent entity (#270)](https://github.com/open-telemetry/semantic-conventions-genai/pull/270) | aabmass | lmolkova&nbsp;✅<br>trask&nbsp;💬 | ✅ | ✅ | <1m |
 
 ## Waiting on authors
