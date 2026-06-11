@@ -1014,15 +1014,15 @@
         "assignees": [],
         "author": "aabmass",
         "ci_failing_count": 0,
-        "ci_pending_count": 30,
+        "ci_pending_count": 0,
         "conflicts": "no",
         "created_at": "2026-06-09T16:27:38+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
-        "last_activity_at": "2026-06-11T14:30:01+00:00",
+        "last_activity_at": "2026-06-11T15:06:07+00:00",
         "last_approver_activity_at": "2026-06-11T05:26:40+00:00",
         "last_author_activity_at": "2026-06-11T14:29:37+00:00",
-        "last_external_activity_at": "2026-06-11T07:54:59+00:00",
+        "last_external_activity_at": "2026-06-11T15:06:06+00:00",
         "reviewers": [
           {
             "approved": true,
@@ -1040,12 +1040,12 @@
           }
         ],
         "waiting_age_basis": "oldest_pending_thread",
-        "waiting_since": "2026-06-11T14:26:01+00:00"
+        "waiting_since": "2026-06-11T15:06:06+00:00"
       },
       "failed": false,
       "pr_number": 270,
       "pr_url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/270",
-      "route": "approver"
+      "route": "author"
     },
     "285": {
       "facts": {
