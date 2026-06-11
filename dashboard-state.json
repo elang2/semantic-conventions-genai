@@ -661,8 +661,8 @@
         "created_at": "2026-05-27T10:55:50+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
-        "last_activity_at": "2026-06-10T19:01:48+00:00",
-        "last_approver_activity_at": "2026-06-10T19:01:48+00:00",
+        "last_activity_at": "2026-06-11T00:41:35+00:00",
+        "last_approver_activity_at": "2026-06-11T00:41:35+00:00",
         "last_author_activity_at": "2026-06-10T15:57:41+00:00",
         "last_external_activity_at": "2026-05-27T15:34:20+00:00",
         "reviewers": [
@@ -678,7 +678,7 @@
             "approved_non_team": false,
             "changes_requested": false,
             "login": "lmolkova",
-            "open_thread": false
+            "open_thread": true
           },
           {
             "approved": false,
@@ -696,7 +696,7 @@
           }
         ],
         "waiting_age_basis": "oldest_pending_thread",
-        "waiting_since": "2026-06-10T19:01:48+00:00"
+        "waiting_since": "2026-06-11T00:41:35+00:00"
       },
       "failed": false,
       "pr_number": 203,
