@@ -586,7 +586,7 @@
             "approved_non_team": false,
             "changes_requested": true,
             "login": "MikeGoldsmith",
-            "open_thread": false
+            "open_thread": true
           },
           {
             "approved": false,
