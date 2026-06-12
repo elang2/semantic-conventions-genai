@@ -11,7 +11,7 @@
 | [gen-ai: make input-messages BlobPart content optional and add stripped_reason (#144)](https://github.com/open-telemetry/semantic-conventions-genai/pull/144) | Mandark-droid | lmolkova<br>trask | ✅ | ✅ | 2d |
 | [gen-ai: model agent-to-agent handoff as execute_tool span (#98)](https://github.com/open-telemetry/semantic-conventions-genai/pull/98) | Krishnachaitanyakc | lmolkova<br>MikeGoldsmith&nbsp;✅<br>trask | ✅ | ✅ | 1d |
 | [Add `gen_ai.request.reasoning.level` attribute (#258)](https://github.com/open-telemetry/semantic-conventions-genai/pull/258) | katsuhisa91 | JWinermaSplunk&nbsp;✅<br>lmolkova<br>trask | ❌ | ✅ | 19h |
-| [Update dependency open-telemetry/semantic-conventions to v1.42.0 (#288)](https://github.com/open-telemetry/semantic-conventions-genai/pull/288) | app/renovate |  | ⏳ | ✅ | <1m |
+| [Update dependency open-telemetry/semantic-conventions to v1.42.0 (#288)](https://github.com/open-telemetry/semantic-conventions-genai/pull/288) | app/renovate |  | ❌ | ✅ | <1m |
 
 ## Waiting on authors
 
