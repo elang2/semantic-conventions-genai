@@ -124,9 +124,9 @@
         "created_at": "2026-05-14T22:13:32+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
-        "last_activity_at": "2026-06-12T20:27:48+00:00",
+        "last_activity_at": "2026-06-13T02:45:29+00:00",
         "last_approver_activity_at": "2026-06-10T19:02:06+00:00",
-        "last_author_activity_at": "2026-06-12T20:27:10+00:00",
+        "last_author_activity_at": "2026-06-13T02:45:29+00:00",
         "last_external_activity_at": "2026-06-08T16:28:24+00:00",
         "reviewers": [
           {
@@ -152,7 +152,7 @@
           }
         ],
         "waiting_age_basis": "last_author_activity",
-        "waiting_since": "2026-06-12T20:27:10+00:00"
+        "waiting_since": "2026-06-13T02:45:29+00:00"
       },
       "failed": false,
       "pr_number": 162,
