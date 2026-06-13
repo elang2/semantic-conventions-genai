@@ -19,7 +19,7 @@
 | [Add `gen_ai.request.reasoning.level` attribute (#258)](https://github.com/open-telemetry/semantic-conventions-genai/pull/258) | katsuhisa91 | JWinermaSplunk&nbsp;✅<br>lmolkova<br>trask | ❌ | ✅ | 1d |
 | [Update dependency open-telemetry/semantic-conventions to v1.42.0 (#288)](https://github.com/open-telemetry/semantic-conventions-genai/pull/288) | app/renovate |  | ❌ | ✅ | 12h |
 | [Limit supported  part types  on `gen_ai.system_instructions` to text only (#257)](https://github.com/open-telemetry/semantic-conventions-genai/pull/257) | lmolkova | MikeGoldsmith&nbsp;✅<br>trask | ✅ | ✅ | 11h |
-| [Add experimental GenAI context selection event (#190)](https://github.com/open-telemetry/semantic-conventions-genai/pull/190) | caioribeiroclw-pixel | trask | ❌ | ❌ | <1m |
+| [Add experimental GenAI context selection event (#190)](https://github.com/open-telemetry/semantic-conventions-genai/pull/190) | caioribeiroclw-pixel | trask | ❌ | ❌ | 1m |
 
 ## Waiting on authors
 
