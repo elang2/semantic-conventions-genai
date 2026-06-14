@@ -20,7 +20,7 @@
 | [Limit supported  part types  on `gen_ai.system_instructions` to text only (#257)](https://github.com/open-telemetry/semantic-conventions-genai/pull/257) | lmolkova | MikeGoldsmith&nbsp;✅<br>trask | ✅ | ✅ | 1d |
 | [Add experimental GenAI context selection event (#190)](https://github.com/open-telemetry/semantic-conventions-genai/pull/190) | caioribeiroclw-pixel | trask | ❌ | ❌ | 18h |
 | [Add GenAI client metrics to the anthropic reference scenario (#283)](https://github.com/open-telemetry/semantic-conventions-genai/pull/283) | AgentGymLeader |  | ✅ | ✅ | 2h |
-| [Remove gen_ai.provider.name from internal agent spans (#289)](https://github.com/open-telemetry/semantic-conventions-genai/pull/289) | lmolkova |  | ✅ | ✅ | 25m |
+| [Remove gen_ai.provider.name from internal agent spans (#289)](https://github.com/open-telemetry/semantic-conventions-genai/pull/289) | lmolkova |  | ✅ | ✅ | 26m |
 | [chore: auto-regenerate outputs on SEMCONV_VERSION bumps via Renovate post-upgrade task (#290)](https://github.com/open-telemetry/semantic-conventions-genai/pull/290) | web-flow | Copilot<br>lmolkova&nbsp;✅ | ⏳ | ✅ | 12m |
 
 ## Waiting on authors
