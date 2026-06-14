@@ -7,7 +7,7 @@
 
 | PR | Author | Reviewers | CI | Conflicts | Age |
 |---|---|---|:---:|:---:|:---:|
-| [semconv for compaction (#162)](https://github.com/open-telemetry/semantic-conventions-genai/pull/162) | eternalcuriouslearner | JWinermaSplunk&nbsp;✅<br>lmolkova&nbsp;✅<br>trask | ✅ | ✅ | 23h |
+| [semconv for compaction (#162)](https://github.com/open-telemetry/semantic-conventions-genai/pull/162) | eternalcuriouslearner | JWinermaSplunk&nbsp;✅<br>lmolkova&nbsp;✅<br>trask | ✅ | ✅ | 1d |
 
 ## Waiting on reviewers
 
@@ -19,8 +19,9 @@
 | [Add `gen_ai.request.reasoning.level` attribute (#258)](https://github.com/open-telemetry/semantic-conventions-genai/pull/258) | katsuhisa91 | JWinermaSplunk&nbsp;✅<br>lmolkova<br>trask | ❌ | ✅ | 2d |
 | [Update dependency open-telemetry/semantic-conventions to v1.42.0 (#288)](https://github.com/open-telemetry/semantic-conventions-genai/pull/288) | app/renovate |  | ❌ | ✅ | 1d |
 | [Limit supported  part types  on `gen_ai.system_instructions` to text only (#257)](https://github.com/open-telemetry/semantic-conventions-genai/pull/257) | lmolkova | MikeGoldsmith&nbsp;✅<br>trask | ✅ | ✅ | 1d |
-| [Add experimental GenAI context selection event (#190)](https://github.com/open-telemetry/semantic-conventions-genai/pull/190) | caioribeiroclw-pixel | trask | ❌ | ❌ | 16h |
-| [Add GenAI client metrics to the anthropic reference scenario (#283)](https://github.com/open-telemetry/semantic-conventions-genai/pull/283) | AgentGymLeader |  | ✅ | ✅ | 55m |
+| [Add experimental GenAI context selection event (#190)](https://github.com/open-telemetry/semantic-conventions-genai/pull/190) | caioribeiroclw-pixel | trask | ❌ | ❌ | 17h |
+| [Add GenAI client metrics to the anthropic reference scenario (#283)](https://github.com/open-telemetry/semantic-conventions-genai/pull/283) | AgentGymLeader |  | ✅ | ✅ | 1h |
+| [Remove gen_ai.provider.name from internal agent spans (#289)](https://github.com/open-telemetry/semantic-conventions-genai/pull/289) | lmolkova |  | ⏳ | ✅ | 5m |
 
 ## Waiting on authors
 
