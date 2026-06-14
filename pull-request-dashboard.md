@@ -59,7 +59,7 @@
 | [Add time_budget value for gen_ai.agent.finish_reason (#267)](https://github.com/open-telemetry/semantic-conventions-genai/pull/267) | Nik-Reddy | 3d |
 | [genai: add `gen_ai.token.cache` and `gen_ai.token.reasoning` metric attributes (#96)](https://github.com/open-telemetry/semantic-conventions-genai/pull/96) | Nik-Reddy | 3d |
 | [Scope PR dashboard Slack notifications (#282)](https://github.com/open-telemetry/semantic-conventions-genai/pull/282) | trask | 3d |
-| [\[WIP\] Update Renovate configuration to auto-generate documentation (#290)](https://github.com/open-telemetry/semantic-conventions-genai/pull/290) | app/copilot-swe-agent | <1m |
+| [chore: auto-regenerate outputs on SEMCONV_VERSION bumps via Renovate post-upgrade task (#290)](https://github.com/open-telemetry/semantic-conventions-genai/pull/290) | app/copilot-swe-agent | <1m |
 
 <details>
 <summary>Diagnostics</summary>
