@@ -26,6 +26,24 @@
   ],
   "packageRules": [
     {
+      // Regenerate derived docs/registry/schema-snapshot/JSON-schema outputs whenever
+      // SEMCONV_VERSION is bumped; CI validates all of these via `make generate-all`.
+      "description": "Regenerate outputs after semantic-conventions version bump",
+      "matchManagers": ["custom.regex"],
+      "matchFileNames": ["versions.env"],
+      "matchPackageNames": ["open-telemetry/semantic-conventions"],
+      "postUpgradeTasks": {
+        "commands": ["make generate-all"],
+        "fileFilters": [
+          "docs/**",
+          "schema-snapshot/**",
+          "reference/README.md",
+          "reference/reports/**"
+        ],
+        "executionMode": "update"
+      }
+    },
+    {
       "description": "Non-major reference implementation updates",
       "matchFileNames": [
         "reference/**"
