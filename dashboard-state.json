@@ -456,14 +456,14 @@
         ],
         "author": "eternalcuriouslearner",
         "ci_failing_count": 0,
-        "ci_pending_count": 29,
+        "ci_pending_count": 0,
         "conflicts": "no",
         "created_at": "2026-05-26T13:02:51+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
-        "last_activity_at": "2026-06-16T02:02:33+00:00",
+        "last_activity_at": "2026-06-16T02:12:01+00:00",
         "last_approver_activity_at": "2026-06-10T19:01:56+00:00",
-        "last_author_activity_at": "2026-06-16T02:02:31+00:00",
+        "last_author_activity_at": "2026-06-16T02:12:01+00:00",
         "last_external_activity_at": "2026-06-12T13:03:49+00:00",
         "reviewers": [
           {
@@ -489,7 +489,7 @@
           }
         ],
         "waiting_age_basis": "oldest_pending_thread",
-        "waiting_since": "2026-06-12T13:03:49+00:00"
+        "waiting_since": "2026-06-16T02:12:01+00:00"
       },
       "failed": false,
       "pr_number": 195,
