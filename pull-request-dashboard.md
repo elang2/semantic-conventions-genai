@@ -23,7 +23,6 @@
 | [Add `gen_ai.request.reasoning.level` attribute (#258)](https://github.com/open-telemetry/semantic-conventions-genai/pull/258) | katsuhisa91 | JWinermaSplunk&nbsp;✅<br>lmolkova<br>trask | ✅ | ✅ | 2d |
 | [Add prompt versioning and variable support to GenAI attributes (#179)](https://github.com/open-telemetry/semantic-conventions-genai/pull/179) | steverao | lmolkova<br>trask | ✅ | ✅ | 1d |
 | [Add GenAI client metrics to the anthropic reference scenario (#283)](https://github.com/open-telemetry/semantic-conventions-genai/pull/283) | AgentGymLeader |  | ✅ | ✅ | 23h |
-| [Bump the python-security group across 14 directories with 3 updates (#295)](https://github.com/open-telemetry/semantic-conventions-genai/pull/295) | app/dependabot | trask&nbsp;✅ | ✅ | ✅ | 3h |
 
 ## Waiting on authors
 
