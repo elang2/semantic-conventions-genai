@@ -23,6 +23,7 @@
 | [Add prompt versioning and variable support to GenAI attributes (#179)](https://github.com/open-telemetry/semantic-conventions-genai/pull/179) | steverao | lmolkova<br>trask | ✅ | ✅ | 18h |
 | [Add GenAI client metrics to the anthropic reference scenario (#283)](https://github.com/open-telemetry/semantic-conventions-genai/pull/283) | AgentGymLeader |  | ✅ | ✅ | 9h |
 | [semconv for a2a protocol (#195)](https://github.com/open-telemetry/semantic-conventions-genai/pull/195) | eternalcuriouslearner | aabmass<br>JWinermaSplunk<br>trask | ✅ | ✅ | 1h |
+| [Bump the python-security group across 6 directories with 2 updates (#293)](https://github.com/open-telemetry/semantic-conventions-genai/pull/293) | app/dependabot |  | ⏳ | ✅ | <1m |
 
 ## Waiting on authors
 
@@ -50,12 +51,6 @@
 | PR | Author | Reviewers | CI | Conflicts | Age |
 |---|---|---|:---:|:---:|:---:|
 | [Update dependency google-genai to v2 (#112)](https://github.com/open-telemetry/semantic-conventions-genai/pull/112) | app/renovate | lmolkova&nbsp;✅ | ❌ | ✅ | 27d |
-
-## Unknown
-
-| PR | Author | Reviewers | CI | Conflicts | Age |
-|---|---|---|:---:|:---:|:---:|
-| [Bump the python-security group across 6 directories with 2 updates (#293)](https://github.com/open-telemetry/semantic-conventions-genai/pull/293) | app/dependabot |  | ? | ? | ? |
 
 ## Draft pull requests
 
