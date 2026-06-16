@@ -41,9 +41,9 @@
 | [gen-ai: add run guardrail span and security finding (#262)](https://github.com/open-telemetry/semantic-conventions-genai/pull/262) | nagkumar91 | aabmass<br>habibam&nbsp;✔️<br>trask | ✅ | ✅ | 1d |
 | [semconv for a2a protocol (#195)](https://github.com/open-telemetry/semantic-conventions-genai/pull/195) | eternalcuriouslearner | aabmass<br>JWinermaSplunk<br>trask | ✅ | ✅ | 9h |
 | [Propose GenAI agent entity (#270)](https://github.com/open-telemetry/semantic-conventions-genai/pull/270) | aabmass | lmolkova&nbsp;💬⁠✅<br>trask&nbsp;💬 | ✅ | ❌ | 6h |
-| [semconv for compaction (#162)](https://github.com/open-telemetry/semantic-conventions-genai/pull/162) | eternalcuriouslearner | JWinermaSplunk&nbsp;✅<br>lmolkova&nbsp;✅<br>trask&nbsp;💬 | ✅ | ✅ | 34m |
-| [Classify invoke_agent client vs internal by span kind (#296)](https://github.com/open-telemetry/semantic-conventions-genai/pull/296) | trask | Copilot&nbsp;💬<br>copilot-pull-request-reviewer\[bot\]&nbsp;✔️<br>lmolkova&nbsp;✅ | ✅ | ✅ | 12m |
-| [Add `gen_ai.request.reasoning.level` attribute (#258)](https://github.com/open-telemetry/semantic-conventions-genai/pull/258) | katsuhisa91 | JWinermaSplunk&nbsp;✅<br>lmolkova<br>trask&nbsp;💬 | ✅ | ✅ | 4m |
+| [semconv for compaction (#162)](https://github.com/open-telemetry/semantic-conventions-genai/pull/162) | eternalcuriouslearner | JWinermaSplunk&nbsp;✅<br>lmolkova&nbsp;✅<br>trask&nbsp;💬 | ✅ | ✅ | 43m |
+| [Classify invoke_agent client vs internal by span kind (#296)](https://github.com/open-telemetry/semantic-conventions-genai/pull/296) | trask | Copilot&nbsp;💬<br>copilot-pull-request-reviewer\[bot\]&nbsp;✔️<br>lmolkova&nbsp;✅ | ✅ | ✅ | 21m |
+| [Add `gen_ai.request.reasoning.level` attribute (#258)](https://github.com/open-telemetry/semantic-conventions-genai/pull/258) | katsuhisa91 | JWinermaSplunk&nbsp;✅<br>lmolkova<br>trask&nbsp;💬 | ✅ | ✅ | 13m |
 
 ## Waiting on external
 
@@ -60,6 +60,7 @@
 | [genai: add `gen_ai.token.cache` and `gen_ai.token.reasoning` metric attributes (#96)](https://github.com/open-telemetry/semantic-conventions-genai/pull/96) | Nik-Reddy | 6d |
 | [Scope PR dashboard Slack notifications (#282)](https://github.com/open-telemetry/semantic-conventions-genai/pull/282) | trask | 6d |
 | [feat(gen-ai): add agent authorization observability attributes (#180) (#291)](https://github.com/open-telemetry/semantic-conventions-genai/pull/291) | thebenignhacker | 8h |
+| [Fix Copilot reviewer aliases in PR dashboard (#316)](https://github.com/open-telemetry/semantic-conventions-genai/pull/316) | trask | <1m |
 
 <details>
 <summary>Diagnostics</summary>
