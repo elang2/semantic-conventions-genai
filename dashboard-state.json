@@ -1152,6 +1152,30 @@
       "pr_url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/290",
       "route": "author"
     },
+    "295": {
+      "facts": {
+        "approval_count": 0,
+        "assignees": [],
+        "author": "app/dependabot",
+        "ci_failing_count": 0,
+        "ci_pending_count": 34,
+        "conflicts": "no",
+        "created_at": "2026-06-16T14:44:03+00:00",
+        "is_draft": false,
+        "is_maintenance_bot": false,
+        "last_activity_at": "2026-06-16T14:44:07+00:00",
+        "last_approver_activity_at": "",
+        "last_author_activity_at": "",
+        "last_external_activity_at": "",
+        "reviewers": [],
+        "waiting_age_basis": "created",
+        "waiting_since": "2026-06-16T14:44:03+00:00"
+      },
+      "failed": false,
+      "pr_number": 295,
+      "pr_url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/295",
+      "route": "approver"
+    },
     "98": {
       "facts": {
         "approval_count": 1,
