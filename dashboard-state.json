@@ -1101,7 +1101,7 @@
       "failed": false,
       "pr_number": 289,
       "pr_url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/289",
-      "route": "approver"
+      "route": "author"
     },
     "290": {
       "facts": {
