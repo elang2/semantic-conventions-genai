@@ -119,14 +119,14 @@
         ],
         "author": "eternalcuriouslearner",
         "ci_failing_count": 0,
-        "ci_pending_count": 0,
+        "ci_pending_count": 8,
         "conflicts": "no",
         "created_at": "2026-05-14T22:13:32+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
-        "last_activity_at": "2026-06-16T21:21:04+00:00",
+        "last_activity_at": "2026-06-16T21:53:00+00:00",
         "last_approver_activity_at": "2026-06-16T21:21:04+00:00",
-        "last_author_activity_at": "2026-06-16T16:43:27+00:00",
+        "last_author_activity_at": "2026-06-16T21:52:58+00:00",
         "last_external_activity_at": "2026-06-08T16:28:24+00:00",
         "reviewers": [
           {
@@ -152,12 +152,12 @@
           }
         ],
         "waiting_age_basis": "oldest_pending_thread",
-        "waiting_since": "2026-06-16T21:21:04+00:00"
+        "waiting_since": "2026-06-16T21:52:52+00:00"
       },
       "failed": false,
       "pr_number": 162,
       "pr_url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/162",
-      "route": "author"
+      "route": "approver"
     },
     "164": {
       "facts": {
@@ -1101,7 +1101,7 @@
       "failed": false,
       "pr_number": 289,
       "pr_url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/289",
-      "route": "author"
+      "route": "approver"
     },
     "290": {
       "facts": {
