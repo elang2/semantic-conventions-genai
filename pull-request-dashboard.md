@@ -43,7 +43,7 @@
 | [gen-ai: add run guardrail span and security finding (#262)](https://github.com/open-telemetry/semantic-conventions-genai/pull/262) | nagkumar91 | aabmass<br>habibam&nbsp;✔️<br>trask | ✅ | ✅ | 1d |
 | [semconv for a2a protocol (#195)](https://github.com/open-telemetry/semantic-conventions-genai/pull/195) | eternalcuriouslearner | aabmass<br>JWinermaSplunk<br>trask | ✅ | ✅ | 8h |
 | [Propose GenAI agent entity (#270)](https://github.com/open-telemetry/semantic-conventions-genai/pull/270) | aabmass | lmolkova&nbsp;💬⁠✅<br>trask&nbsp;💬 | ✅ | ❌ | 6h |
-| [semconv for compaction (#162)](https://github.com/open-telemetry/semantic-conventions-genai/pull/162) | eternalcuriouslearner | JWinermaSplunk&nbsp;✅<br>lmolkova&nbsp;✅<br>trask&nbsp;💬 | ✅ | ✅ | 22m |
+| [semconv for compaction (#162)](https://github.com/open-telemetry/semantic-conventions-genai/pull/162) | eternalcuriouslearner | JWinermaSplunk&nbsp;✅<br>lmolkova&nbsp;✅<br>trask&nbsp;💬 | ✅ | ✅ | 23m |
 | [Classify invoke_agent client vs internal by span kind (#296)](https://github.com/open-telemetry/semantic-conventions-genai/pull/296) | trask | Copilot&nbsp;💬<br>copilot-pull-request-reviewer\[bot\]&nbsp;✔️<br>lmolkova&nbsp;✅ | ✅ | ✅ | <1m |
 
 ## Waiting on external
