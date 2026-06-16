@@ -1154,7 +1154,7 @@
     },
     "295": {
       "facts": {
-        "approval_count": 0,
+        "approval_count": 1,
         "assignees": [],
         "author": "app/dependabot",
         "ci_failing_count": 0,
@@ -1163,11 +1163,19 @@
         "created_at": "2026-06-16T14:44:03+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
-        "last_activity_at": "2026-06-16T14:44:07+00:00",
-        "last_approver_activity_at": "",
+        "last_activity_at": "2026-06-16T18:29:06+00:00",
+        "last_approver_activity_at": "2026-06-16T18:29:06+00:00",
         "last_author_activity_at": "",
         "last_external_activity_at": "",
-        "reviewers": [],
+        "reviewers": [
+          {
+            "approved": true,
+            "approved_non_team": false,
+            "changes_requested": false,
+            "login": "trask",
+            "open_thread": false
+          }
+        ],
         "waiting_age_basis": "created",
         "waiting_since": "2026-06-16T14:44:03+00:00"
       },
