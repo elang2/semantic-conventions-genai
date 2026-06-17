@@ -1157,23 +1157,16 @@
         "assignees": [],
         "author": "trask",
         "ci_failing_count": 0,
-        "ci_pending_count": 33,
+        "ci_pending_count": 31,
         "conflicts": "no",
         "created_at": "2026-06-16T15:23:13+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
-        "last_activity_at": "2026-06-17T18:16:10+00:00",
+        "last_activity_at": "2026-06-17T18:18:51+00:00",
         "last_approver_activity_at": "2026-06-16T15:54:46+00:00",
-        "last_author_activity_at": "2026-06-17T18:09:40+00:00",
+        "last_author_activity_at": "2026-06-17T18:18:51+00:00",
         "last_external_activity_at": "2026-06-16T22:58:21+00:00",
         "reviewers": [
-          {
-            "approved": false,
-            "approved_non_team": false,
-            "changes_requested": false,
-            "login": "copilot-pull-request-reviewer",
-            "open_thread": true
-          },
           {
             "approved": false,
             "approved_non_team": true,
@@ -1189,13 +1182,13 @@
             "open_thread": false
           }
         ],
-        "waiting_age_basis": "oldest_pending_thread",
-        "waiting_since": "2026-06-16T22:58:21+00:00"
+        "waiting_age_basis": "last_author_activity",
+        "waiting_since": "2026-06-17T18:18:51+00:00"
       },
       "failed": false,
       "pr_number": 296,
       "pr_url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/296",
-      "route": "author"
+      "route": "approver"
     },
     "316": {
       "facts": {
