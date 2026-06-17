@@ -509,7 +509,7 @@
             "approved_non_team": false,
             "changes_requested": false,
             "login": "aabmass",
-            "open_thread": true
+            "open_thread": false
           },
           {
             "approved": true,
@@ -534,7 +534,7 @@
           }
         ],
         "waiting_age_basis": "oldest_pending_thread",
-        "waiting_since": "2026-06-11T15:15:17+00:00"
+        "waiting_since": "2026-06-11T15:55:41+00:00"
       },
       "failed": false,
       "pr_number": 201,
