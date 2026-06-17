@@ -17,7 +17,7 @@
 |---|---|---|:---:|:---:|:---:|
 | [gen-ai: make input-messages BlobPart content optional and add stripped_reason (#144)](https://github.com/open-telemetry/semantic-conventions-genai/pull/144) | Mandark-droid | lmolkova<br>trask | ✅ | ✅ | 6d |
 | [Add experimental GenAI context selection event (#190)](https://github.com/open-telemetry/semantic-conventions-genai/pull/190) | caioribeiroclw-pixel | trask | ❌ | ❌ | 4d |
-| [Remove gen_ai.provider.name from internal agent spans (#289)](https://github.com/open-telemetry/semantic-conventions-genai/pull/289) | lmolkova | JWinermaSplunk<br>trask&nbsp;✅ | ❌ | ✅ | 3d |
+| [Remove gen_ai.provider.name from internal agent spans (#289)](https://github.com/open-telemetry/semantic-conventions-genai/pull/289) | lmolkova | JWinermaSplunk<br>MikeGoldsmith&nbsp;✅<br>trask&nbsp;✅ | ✅ | ✅ | 3d |
 | [Add prompt versioning and variable support to GenAI attributes (#179)](https://github.com/open-telemetry/semantic-conventions-genai/pull/179) | steverao | lmolkova<br>trask | ✅ | ✅ | 2d |
 | [Fix Copilot reviewer aliases in PR dashboard (#316)](https://github.com/open-telemetry/semantic-conventions-genai/pull/316) | trask | MikeGoldsmith&nbsp;✅ | ✅ | ✅ | 15h |
 | [Fix Copilot dashboard delegator detection (#317)](https://github.com/open-telemetry/semantic-conventions-genai/pull/317) | trask | MikeGoldsmith&nbsp;✅ | ✅ | ✅ | 15h |
@@ -45,7 +45,7 @@
 | [Propose GenAI agent entity (#270)](https://github.com/open-telemetry/semantic-conventions-genai/pull/270) | aabmass | lmolkova&nbsp;💬⁠✅<br>trask&nbsp;💬 | ✅ | ❌ | 22h |
 | [Classify invoke_agent client vs internal by span kind (#296)](https://github.com/open-telemetry/semantic-conventions-genai/pull/296) | trask | Copilot&nbsp;💬<br>copilot-pull-request-reviewer\[bot\]&nbsp;✔️<br>lmolkova&nbsp;✅ | ✅ | ✅ | 16h |
 | [gen-ai: model agent-to-agent handoff as execute_tool span (#98)](https://github.com/open-telemetry/semantic-conventions-genai/pull/98) | Krishnachaitanyakc | lmolkova<br>MikeGoldsmith&nbsp;✅<br>trask | ✅ | ❌ | 4h |
-| [Add GenAI client metrics to the anthropic reference scenario (#283)](https://github.com/open-telemetry/semantic-conventions-genai/pull/283) | AgentGymLeader | JWinermaSplunk<br>MikeGoldsmith&nbsp;🔴 | ✅ | ✅ | 4m |
+| [Add GenAI client metrics to the anthropic reference scenario (#283)](https://github.com/open-telemetry/semantic-conventions-genai/pull/283) | AgentGymLeader | JWinermaSplunk<br>MikeGoldsmith&nbsp;🔴 | ✅ | ✅ | 7m |
 
 ## Waiting on external
 
