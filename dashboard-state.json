@@ -1051,7 +1051,7 @@
     },
     "289": {
       "facts": {
-        "approval_count": 2,
+        "approval_count": 3,
         "assignees": [],
         "author": "lmolkova",
         "ci_failing_count": 0,
@@ -1060,13 +1060,13 @@
         "created_at": "2026-06-14T02:54:17+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
-        "last_activity_at": "2026-06-17T15:06:53+00:00",
-        "last_approver_activity_at": "2026-06-17T15:06:53+00:00",
+        "last_activity_at": "2026-06-17T16:49:43+00:00",
+        "last_approver_activity_at": "2026-06-17T16:49:43+00:00",
         "last_author_activity_at": "2026-06-17T01:46:12+00:00",
         "last_external_activity_at": "",
         "reviewers": [
           {
-            "approved": false,
+            "approved": true,
             "approved_non_team": false,
             "changes_requested": false,
             "login": "JWinermaSplunk",
