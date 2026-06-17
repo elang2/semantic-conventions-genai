@@ -207,7 +207,7 @@
     },
     "173": {
       "facts": {
-        "approval_count": 0,
+        "approval_count": 1,
         "assignees": [],
         "author": "app/renovate",
         "ci_failing_count": 0,
@@ -216,13 +216,13 @@
         "created_at": "2026-05-19T16:34:48+00:00",
         "is_draft": false,
         "is_maintenance_bot": true,
-        "last_activity_at": "2026-06-17T13:34:54+00:00",
-        "last_approver_activity_at": "2026-05-27T12:10:08+00:00",
+        "last_activity_at": "2026-06-17T13:42:31+00:00",
+        "last_approver_activity_at": "2026-06-17T13:42:31+00:00",
         "last_author_activity_at": "",
         "last_external_activity_at": "",
         "reviewers": [
           {
-            "approved": false,
+            "approved": true,
             "approved_non_team": false,
             "changes_requested": false,
             "login": "MikeGoldsmith",
@@ -235,7 +235,7 @@
       "failed": false,
       "pr_number": 173,
       "pr_url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/173",
-      "route": "approver"
+      "route": "maintainer"
     },
     "179": {
       "facts": {
