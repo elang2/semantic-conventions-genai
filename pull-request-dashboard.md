@@ -8,6 +8,7 @@
 | PR | Author | Reviewers | CI | Conflicts | Age |
 |---|---|---|:---:|:---:|:---:|
 | [Add `gen_ai.agent.finish_reason` attribute for agent loop termination (#238)](https://github.com/open-telemetry/semantic-conventions-genai/pull/238) | Nik-Reddy | aabmass&nbsp;✅<br>lmolkova&nbsp;🔴<br>MikeGoldsmith&nbsp;✅<br>trask | ✅ | ✅ | 2d |
+| [semconv for compaction (#162)](https://github.com/open-telemetry/semantic-conventions-genai/pull/162) | eternalcuriouslearner | JWinermaSplunk&nbsp;✅<br>lmolkova&nbsp;✅<br>trask | ✅ | ❌ | <1m |
 
 ## Waiting on reviewers
 
@@ -20,7 +21,7 @@
 | [Remove gen_ai.provider.name from internal agent spans (#289)](https://github.com/open-telemetry/semantic-conventions-genai/pull/289) | lmolkova | JWinermaSplunk<br>trask&nbsp;✅ | ✅ | ❌ | 2d |
 | [Add prompt versioning and variable support to GenAI attributes (#179)](https://github.com/open-telemetry/semantic-conventions-genai/pull/179) | steverao | lmolkova<br>trask | ✅ | ✅ | 1d |
 | [Add `gen_ai.request.reasoning.level` attribute (#258)](https://github.com/open-telemetry/semantic-conventions-genai/pull/258) | katsuhisa91 | JWinermaSplunk&nbsp;✅<br>lmolkova<br>trask | ❌ | ✅ | 1h |
-| [semconv for a2a protocol (#195)](https://github.com/open-telemetry/semantic-conventions-genai/pull/195) | eternalcuriouslearner | aabmass<br>JWinermaSplunk<br>trask | ✅ | ✅ | 1m |
+| [semconv for a2a protocol (#195)](https://github.com/open-telemetry/semantic-conventions-genai/pull/195) | eternalcuriouslearner | aabmass<br>JWinermaSplunk<br>trask | ✅ | ✅ | 12m |
 
 ## Waiting on authors
 
@@ -41,7 +42,6 @@
 | [chore: auto-regenerate outputs on SEMCONV_VERSION bumps via Renovate post-upgrade task (#290)](https://github.com/open-telemetry/semantic-conventions-genai/pull/290) | web-flow | Copilot<br>Copilot&nbsp;💬<br>lmolkova&nbsp;✅<br>trask&nbsp;💬 | ✅ | ✅ | 2d |
 | [gen-ai: add run guardrail span and security finding (#262)](https://github.com/open-telemetry/semantic-conventions-genai/pull/262) | nagkumar91 | aabmass<br>habibam&nbsp;✔️<br>trask | ✅ | ✅ | 1d |
 | [Propose GenAI agent entity (#270)](https://github.com/open-telemetry/semantic-conventions-genai/pull/270) | aabmass | lmolkova&nbsp;💬⁠✅<br>trask&nbsp;💬 | ✅ | ❌ | 8h |
-| [semconv for compaction (#162)](https://github.com/open-telemetry/semantic-conventions-genai/pull/162) | eternalcuriouslearner | JWinermaSplunk&nbsp;✅<br>lmolkova&nbsp;✅<br>trask&nbsp;💬 | ✅ | ❌ | 2h |
 | [Classify invoke_agent client vs internal by span kind (#296)](https://github.com/open-telemetry/semantic-conventions-genai/pull/296) | trask | Copilot&nbsp;💬<br>copilot-pull-request-reviewer\[bot\]&nbsp;✔️<br>lmolkova&nbsp;✅ | ✅ | ✅ | 2h |
 | [Add GenAI client metrics to the anthropic reference scenario (#283)](https://github.com/open-telemetry/semantic-conventions-genai/pull/283) | AgentGymLeader | JWinermaSplunk&nbsp;💬 | ✅ | ✅ | 1h |
 
