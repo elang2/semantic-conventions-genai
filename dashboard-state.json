@@ -1200,6 +1200,30 @@
       "pr_url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/316",
       "route": "approver"
     },
+    "317": {
+      "facts": {
+        "approval_count": 0,
+        "assignees": [],
+        "author": "trask",
+        "ci_failing_count": 0,
+        "ci_pending_count": 0,
+        "conflicts": "no",
+        "created_at": "2026-06-16T23:22:27+00:00",
+        "is_draft": false,
+        "is_maintenance_bot": false,
+        "last_activity_at": "2026-06-17T02:07:47+00:00",
+        "last_approver_activity_at": "",
+        "last_author_activity_at": "2026-06-16T23:27:52+00:00",
+        "last_external_activity_at": "2026-06-16T23:24:23+00:00",
+        "reviewers": [],
+        "waiting_age_basis": "last_author_activity",
+        "waiting_since": "2026-06-16T23:27:52+00:00"
+      },
+      "failed": false,
+      "pr_number": 317,
+      "pr_url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/317",
+      "route": "approver"
+    },
     "98": {
       "facts": {
         "approval_count": 1,
