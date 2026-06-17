@@ -1009,7 +1009,7 @@
         ],
         "author": "AgentGymLeader",
         "ci_failing_count": 0,
-        "ci_pending_count": 21,
+        "ci_pending_count": 0,
         "conflicts": "no",
         "created_at": "2026-06-10T20:59:37+00:00",
         "is_draft": false,
