@@ -20,7 +20,7 @@
 | [Remove gen_ai.provider.name from internal agent spans (#289)](https://github.com/open-telemetry/semantic-conventions-genai/pull/289) | lmolkova | JWinermaSplunk<br>trask&nbsp;✅ | ❌ | ✅ | 3d |
 | [Add prompt versioning and variable support to GenAI attributes (#179)](https://github.com/open-telemetry/semantic-conventions-genai/pull/179) | steverao | lmolkova<br>trask | ✅ | ✅ | 2d |
 | [Fix Copilot reviewer aliases in PR dashboard (#316)](https://github.com/open-telemetry/semantic-conventions-genai/pull/316) | trask | MikeGoldsmith&nbsp;✅ | ✅ | ✅ | 10h |
-| [Fix Copilot dashboard delegator detection (#317)](https://github.com/open-telemetry/semantic-conventions-genai/pull/317) | trask |  | ✅ | ✅ | 10h |
+| [Fix Copilot dashboard delegator detection (#317)](https://github.com/open-telemetry/semantic-conventions-genai/pull/317) | trask | MikeGoldsmith&nbsp;✅ | ✅ | ✅ | 10h |
 | [Add `gen_ai.request.reasoning.level` attribute (#258)](https://github.com/open-telemetry/semantic-conventions-genai/pull/258) | katsuhisa91 | JWinermaSplunk&nbsp;✅<br>lmolkova<br>trask | ❌ | ✅ | 10h |
 | [Add GenAI client metrics to the anthropic reference scenario (#283)](https://github.com/open-telemetry/semantic-conventions-genai/pull/283) | AgentGymLeader | JWinermaSplunk | ✅ | ✅ | 6h |
 | [gen-ai: model agent-to-agent handoff as execute_tool span (#98)](https://github.com/open-telemetry/semantic-conventions-genai/pull/98) | Krishnachaitanyakc | lmolkova<br>MikeGoldsmith&nbsp;✅<br>trask | ✅ | ❌ | 2h |

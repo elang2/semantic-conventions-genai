@@ -1210,7 +1210,7 @@
     },
     "317": {
       "facts": {
-        "approval_count": 0,
+        "approval_count": 1,
         "assignees": [],
         "author": "trask",
         "ci_failing_count": 0,
@@ -1219,11 +1219,19 @@
         "created_at": "2026-06-16T23:22:27+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
-        "last_activity_at": "2026-06-17T02:07:47+00:00",
-        "last_approver_activity_at": "",
+        "last_activity_at": "2026-06-17T10:10:24+00:00",
+        "last_approver_activity_at": "2026-06-17T10:10:24+00:00",
         "last_author_activity_at": "2026-06-16T23:27:52+00:00",
         "last_external_activity_at": "2026-06-16T23:24:23+00:00",
-        "reviewers": [],
+        "reviewers": [
+          {
+            "approved": true,
+            "approved_non_team": false,
+            "changes_requested": false,
+            "login": "MikeGoldsmith",
+            "open_thread": false
+          }
+        ],
         "waiting_age_basis": "last_author_activity",
         "waiting_since": "2026-06-16T23:27:52+00:00"
       },
