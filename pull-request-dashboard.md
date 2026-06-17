@@ -45,7 +45,7 @@
 | [gen-ai: add run guardrail span and security finding (#262)](https://github.com/open-telemetry/semantic-conventions-genai/pull/262) | nagkumar91 | aabmass<br>habibam&nbsp;✔️<br>trask | ✅ | ✅ | 1d |
 | [Propose GenAI agent entity (#270)](https://github.com/open-telemetry/semantic-conventions-genai/pull/270) | aabmass | lmolkova&nbsp;💬⁠✅<br>trask&nbsp;💬 | ✅ | ❌ | 10h |
 | [Classify invoke_agent client vs internal by span kind (#296)](https://github.com/open-telemetry/semantic-conventions-genai/pull/296) | trask | Copilot&nbsp;💬<br>copilot-pull-request-reviewer\[bot\]&nbsp;✔️<br>lmolkova&nbsp;✅ | ✅ | ✅ | 4h |
-| [Add GenAI client metrics to the anthropic reference scenario (#283)](https://github.com/open-telemetry/semantic-conventions-genai/pull/283) | AgentGymLeader | JWinermaSplunk&nbsp;💬 | ✅ | ✅ | <1m |
+| [Add GenAI client metrics to the anthropic reference scenario (#283)](https://github.com/open-telemetry/semantic-conventions-genai/pull/283) | AgentGymLeader | JWinermaSplunk&nbsp;💬 | ✅ | ✅ | 1m |
 
 ## Waiting on external
 
