@@ -1269,13 +1269,13 @@
         ],
         "author": "Krishnachaitanyakc",
         "ci_failing_count": 0,
-        "ci_pending_count": 0,
-        "conflicts": "yes",
+        "ci_pending_count": 32,
+        "conflicts": "no",
         "created_at": "2026-05-05T18:05:53+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
-        "last_activity_at": "2026-06-17T10:54:34+00:00",
-        "last_approver_activity_at": "2026-06-10T19:02:12+00:00",
+        "last_activity_at": "2026-06-17T15:31:18+00:00",
+        "last_approver_activity_at": "2026-06-17T15:31:18+00:00",
         "last_author_activity_at": "2026-06-17T08:06:15+00:00",
         "last_external_activity_at": "2026-06-17T10:54:34+00:00",
         "reviewers": [
@@ -1301,13 +1301,13 @@
             "open_thread": false
           }
         ],
-        "waiting_age_basis": "oldest_pending_thread",
-        "waiting_since": "2026-06-17T10:54:34+00:00"
+        "waiting_age_basis": "last_author_activity",
+        "waiting_since": "2026-06-17T08:06:15+00:00"
       },
       "failed": false,
       "pr_number": 98,
       "pr_url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/98",
-      "route": "author"
+      "route": "approver"
     }
   },
   "version": 3
