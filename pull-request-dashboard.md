@@ -8,6 +8,7 @@
 | PR | Author | Reviewers | CI | Conflicts | Age |
 |---|---|---|:---:|:---:|:---:|
 | [Add `gen_ai.agent.finish_reason` attribute for agent loop termination (#238)](https://github.com/open-telemetry/semantic-conventions-genai/pull/238) | Nik-Reddy | aabmass&nbsp;✅<br>lmolkova&nbsp;🔴<br>MikeGoldsmith&nbsp;✅<br>trask | ✅ | ❌ | 5d |
+| [Fix tool_call_response example field name (result -> response) (#323)](https://github.com/open-telemetry/semantic-conventions-genai/pull/323) | AgentGymLeader | lmolkova&nbsp;✅<br>trask&nbsp;✅ | ✅ | ❌ | 19h |
 
 ## Waiting on reviewers
 
@@ -18,11 +19,10 @@
 | [gen-ai: model agent-to-agent handoff as execute_tool span (#98)](https://github.com/open-telemetry/semantic-conventions-genai/pull/98) | Krishnachaitanyakc | lmolkova<br>MikeGoldsmith&nbsp;✅<br>trask | ✅ | ❌ | 2d |
 | [Add GenAI client metrics to the anthropic reference scenario (#283)](https://github.com/open-telemetry/semantic-conventions-genai/pull/283) | AgentGymLeader | JWinermaSplunk<br>MikeGoldsmith&nbsp;🔴 | ✅ | ✅ | 22h |
 | [Clarify that gen_ai.invoke_agent.duration is about in-proc / internal span (#321)](https://github.com/open-telemetry/semantic-conventions-genai/pull/321) | lmolkova | trask&nbsp;✅ | ✅ | ✅ | 22h |
-| [Fix tool_call_response example field name (result -> response) (#323)](https://github.com/open-telemetry/semantic-conventions-genai/pull/323) | AgentGymLeader | lmolkova&nbsp;✅ | ✅ | ❌ | 19h |
 | [Add Agent Framework reference scenario (#325)](https://github.com/open-telemetry/semantic-conventions-genai/pull/325) | eavanvalkenburg |  | ✅ | ✅ | 7h |
 | [Update dependency google-adk to v2 (#328)](https://github.com/open-telemetry/semantic-conventions-genai/pull/328) | app/renovate |  | ❌ | ✅ | 1h |
-| [Add json-schema annotation for complex attributes, render boilerplate note in templates (#330)](https://github.com/open-telemetry/semantic-conventions-genai/pull/330) | lmolkova | trask&nbsp;✅ | ✅ | ✅ | 23m |
-| [Generalize review guidance comment (#329)](https://github.com/open-telemetry/semantic-conventions-genai/pull/329) | trask |  | ✅ | ✅ | 4m |
+| [Add json-schema annotation for complex attributes, render boilerplate note in templates (#330)](https://github.com/open-telemetry/semantic-conventions-genai/pull/330) | lmolkova | trask&nbsp;✅ | ✅ | ✅ | 25m |
+| [Generalize review guidance comment (#329)](https://github.com/open-telemetry/semantic-conventions-genai/pull/329) | trask |  | ✅ | ✅ | 6m |
 
 ## Waiting on authors
 
