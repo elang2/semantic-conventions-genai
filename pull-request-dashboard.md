@@ -19,9 +19,9 @@
 | [Add GenAI client metrics to the anthropic reference scenario (#283)](https://github.com/open-telemetry/semantic-conventions-genai/pull/283) | AgentGymLeader | JWinermaSplunk<br>MikeGoldsmith&nbsp;🔴 | ✅ | ✅ | 22h |
 | [Clarify that gen_ai.invoke_agent.duration is about in-proc / internal span (#321)](https://github.com/open-telemetry/semantic-conventions-genai/pull/321) | lmolkova | trask&nbsp;✅ | ✅ | ✅ | 22h |
 | [Fix tool_call_response example field name (result -> response) (#323)](https://github.com/open-telemetry/semantic-conventions-genai/pull/323) | AgentGymLeader | lmolkova&nbsp;✅ | ✅ | ❌ | 18h |
-| [Add Agent Framework reference scenario (#325)](https://github.com/open-telemetry/semantic-conventions-genai/pull/325) | eavanvalkenburg |  | ✅ | ✅ | 6h |
+| [Add Agent Framework reference scenario (#325)](https://github.com/open-telemetry/semantic-conventions-genai/pull/325) | eavanvalkenburg |  | ✅ | ✅ | 7h |
 | [Update dependency google-adk to v2 (#328)](https://github.com/open-telemetry/semantic-conventions-genai/pull/328) | app/renovate |  | ❌ | ✅ | 1h |
-| [Add json-schema annotation for complex attributes, render boilerplate note in templates (#330)](https://github.com/open-telemetry/semantic-conventions-genai/pull/330) | lmolkova | trask&nbsp;✅ | ✅ | ✅ | 14m |
+| [Add json-schema annotation for complex attributes, render boilerplate note in templates (#330)](https://github.com/open-telemetry/semantic-conventions-genai/pull/330) | lmolkova | trask&nbsp;✅ | ✅ | ✅ | 19m |
 
 ## Waiting on authors
 
@@ -61,7 +61,7 @@
 | [genai: add `gen_ai.token.cache` and `gen_ai.token.reasoning` metric attributes (#96)](https://github.com/open-telemetry/semantic-conventions-genai/pull/96) | Nik-Reddy | 9d |
 | [Scope PR dashboard Slack notifications (#282)](https://github.com/open-telemetry/semantic-conventions-genai/pull/282) | trask | 9d |
 | [feat(gen-ai): add agent authorization observability attributes (#180) (#291)](https://github.com/open-telemetry/semantic-conventions-genai/pull/291) | thebenignhacker | 3d |
-| [Generalize review guidance comment (#329)](https://github.com/open-telemetry/semantic-conventions-genai/pull/329) | trask | 3m |
+| [Generalize review guidance comment (#329)](https://github.com/open-telemetry/semantic-conventions-genai/pull/329) | trask | <1m |
 
 <details>
 <summary>Diagnostics</summary>
