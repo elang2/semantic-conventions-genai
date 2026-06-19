@@ -19,10 +19,10 @@
 | [Add GenAI client metrics to the anthropic reference scenario (#283)](https://github.com/open-telemetry/semantic-conventions-genai/pull/283) | AgentGymLeader | JWinermaSplunk<br>MikeGoldsmith&nbsp;🔴 | ✅ | ✅ | 23h |
 | [Clarify that gen_ai.invoke_agent.duration is about in-proc / internal span (#321)](https://github.com/open-telemetry/semantic-conventions-genai/pull/321) | lmolkova | trask&nbsp;✅ | ✅ | ❌ | 23h |
 | [Add Agent Framework reference scenario (#325)](https://github.com/open-telemetry/semantic-conventions-genai/pull/325) | eavanvalkenburg |  | ✅ | ✅ | 7h |
-| [Update dependency google-adk to v2 (#328)](https://github.com/open-telemetry/semantic-conventions-genai/pull/328) | app/renovate |  | ❌ | ✅ | 1h |
+| [Update dependency google-adk to v2 (#328)](https://github.com/open-telemetry/semantic-conventions-genai/pull/328) | app/renovate |  | ❌ | ✅ | 2h |
 | [Add json-schema annotation for complex attributes, render boilerplate note in templates (#330)](https://github.com/open-telemetry/semantic-conventions-genai/pull/330) | lmolkova | trask&nbsp;✅ | ✅ | ✅ | 1h |
-| [Generalize review guidance comment (#329)](https://github.com/open-telemetry/semantic-conventions-genai/pull/329) | trask |  | ✅ | ✅ | 43m |
-| [Migrate anthropic reference scenario to opentelemetry-util-genai (#324)](https://github.com/open-telemetry/semantic-conventions-genai/pull/324) | AgentGymLeader |  | ✅ | ✅ | <1m |
+| [Generalize review guidance comment (#329)](https://github.com/open-telemetry/semantic-conventions-genai/pull/329) | trask |  | ✅ | ✅ | 50m |
+| [Migrate anthropic reference scenario to opentelemetry-util-genai (#324)](https://github.com/open-telemetry/semantic-conventions-genai/pull/324) | AgentGymLeader |  | ✅ | ✅ | 8m |
 
 ## Waiting on authors
 
@@ -44,7 +44,7 @@
 | [Propose GenAI agent entity (#270)](https://github.com/open-telemetry/semantic-conventions-genai/pull/270) | aabmass | AgentGymLeader&nbsp;✔️<br>lmolkova&nbsp;✅<br>trask&nbsp;💬 | ✅ | ❌ | 1d |
 | [proposal: agent.threat.detection.* attributes + event (closes #132) (#165)](https://github.com/open-telemetry/semantic-conventions-genai/pull/165) | eeee2345 |  | ✅ | ❌ | 1d |
 | [semconv for a2a protocol (#195)](https://github.com/open-telemetry/semantic-conventions-genai/pull/195) | eternalcuriouslearner | aabmass<br>JWinermaSplunk<br>pwkowalski&nbsp;💬<br>trask | ✅ | ❌ | 1d |
-| [Add prompt versioning and variable support to GenAI attributes (#179)](https://github.com/open-telemetry/semantic-conventions-genai/pull/179) | steverao | alexmojaki&nbsp;💬⁠✅<br>lmolkova&nbsp;✅<br>trask | ✅ | ❌ | 10h |
+| [Add prompt versioning and variable support to GenAI attributes (#179)](https://github.com/open-telemetry/semantic-conventions-genai/pull/179) | steverao | alexmojaki&nbsp;💬⁠✅<br>lmolkova&nbsp;✅<br>trask | ✅ | ❌ | 11h |
 | [Align attributes between invoke_agent.internal and execute_tool spans and metrics (#322)](https://github.com/open-telemetry/semantic-conventions-genai/pull/322) | lmolkova | trask&nbsp;✅ | ✅ | ❌ | 2h |
 
 ## Waiting on external
