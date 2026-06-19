@@ -23,7 +23,6 @@
 | [Remove schema snapshot (#327)](https://github.com/open-telemetry/semantic-conventions-genai/pull/327) | lmolkova | trask&nbsp;✅ | ✅ | ✅ | 57m |
 | [Fix `tool_call_response` field name: `result` → `response` in examples (#326)](https://github.com/open-telemetry/semantic-conventions-genai/pull/326) | lmolkova | Copilot<br>lmolkova&nbsp;✔️ | ✅ | ✅ | 51m |
 | [Update dependency google-adk to v2 (#328)](https://github.com/open-telemetry/semantic-conventions-genai/pull/328) | app/renovate |  | ❌ | ✅ | 51m |
-| [Add json-schema annotation for complex attributes, render boilerplate note in templates (#330)](https://github.com/open-telemetry/semantic-conventions-genai/pull/330) | lmolkova |  | ⏳ | ✅ | 2m |
 
 ## Waiting on authors
 
@@ -48,6 +47,7 @@
 | [Add prompt versioning and variable support to GenAI attributes (#179)](https://github.com/open-telemetry/semantic-conventions-genai/pull/179) | steverao | alexmojaki&nbsp;💬⁠✅<br>lmolkova&nbsp;✅<br>trask | ✅ | ✅ | 9h |
 | [Migrate anthropic reference scenario to opentelemetry-util-genai (#324)](https://github.com/open-telemetry/semantic-conventions-genai/pull/324) | AgentGymLeader |  | ✅ | ✅ | 4h |
 | [Align attributes between invoke_agent.internal and execute_tool spans and metrics (#322)](https://github.com/open-telemetry/semantic-conventions-genai/pull/322) | lmolkova |  | ✅ | ✅ | 1h |
+| [Add json-schema annotation for complex attributes, render boilerplate note in templates (#330)](https://github.com/open-telemetry/semantic-conventions-genai/pull/330) | lmolkova |  | ✅ | ✅ | <1m |
 
 ## Waiting on external
 
