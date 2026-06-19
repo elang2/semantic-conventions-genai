@@ -20,8 +20,9 @@
 | [Clarify that gen_ai.invoke_agent.duration is about in-proc / internal span (#321)](https://github.com/open-telemetry/semantic-conventions-genai/pull/321) | lmolkova | trask&nbsp;✅ | ✅ | ✅ | 21h |
 | [Fix tool_call_response example field name (result -> response) (#323)](https://github.com/open-telemetry/semantic-conventions-genai/pull/323) | AgentGymLeader |  | ✅ | ✅ | 18h |
 | [Add Agent Framework reference scenario (#325)](https://github.com/open-telemetry/semantic-conventions-genai/pull/325) | eavanvalkenburg |  | ✅ | ✅ | 6h |
-| [Remove schema snapshot (#327)](https://github.com/open-telemetry/semantic-conventions-genai/pull/327) | lmolkova | trask&nbsp;✅ | ✅ | ✅ | 40m |
-| [Update dependency google-adk to v2 (#328)](https://github.com/open-telemetry/semantic-conventions-genai/pull/328) | app/renovate |  | ❌ | ✅ | 34m |
+| [Remove schema snapshot (#327)](https://github.com/open-telemetry/semantic-conventions-genai/pull/327) | lmolkova | trask&nbsp;✅ | ✅ | ✅ | 53m |
+| [Update dependency google-adk to v2 (#328)](https://github.com/open-telemetry/semantic-conventions-genai/pull/328) | app/renovate |  | ❌ | ✅ | 47m |
+| [Add json-schema annotation for complex attributes, render boilerplate note in templates (#330)](https://github.com/open-telemetry/semantic-conventions-genai/pull/330) | lmolkova |  | ⏳ | ✅ | 7m |
 
 ## Waiting on authors
 
@@ -45,7 +46,7 @@
 | [semconv for a2a protocol (#195)](https://github.com/open-telemetry/semantic-conventions-genai/pull/195) | eternalcuriouslearner | aabmass<br>JWinermaSplunk<br>pwkowalski&nbsp;💬<br>trask | ✅ | ✅ | 1d |
 | [Add prompt versioning and variable support to GenAI attributes (#179)](https://github.com/open-telemetry/semantic-conventions-genai/pull/179) | steverao | alexmojaki&nbsp;💬⁠✅<br>lmolkova&nbsp;✅<br>trask | ✅ | ✅ | 9h |
 | [Migrate anthropic reference scenario to opentelemetry-util-genai (#324)](https://github.com/open-telemetry/semantic-conventions-genai/pull/324) | AgentGymLeader |  | ✅ | ✅ | 4h |
-| [Align attributes between invoke_agent.internal and execute_tool spans and metrics (#322)](https://github.com/open-telemetry/semantic-conventions-genai/pull/322) | lmolkova |  | ✅ | ✅ | 43m |
+| [Align attributes between invoke_agent.internal and execute_tool spans and metrics (#322)](https://github.com/open-telemetry/semantic-conventions-genai/pull/322) | lmolkova |  | ✅ | ✅ | 55m |
 
 ## Waiting on external
 
@@ -61,126 +62,13 @@
 | [genai: add `gen_ai.token.cache` and `gen_ai.token.reasoning` metric attributes (#96)](https://github.com/open-telemetry/semantic-conventions-genai/pull/96) | Nik-Reddy | 9d |
 | [Scope PR dashboard Slack notifications (#282)](https://github.com/open-telemetry/semantic-conventions-genai/pull/282) | trask | 8d |
 | [feat(gen-ai): add agent authorization observability attributes (#180) (#291)](https://github.com/open-telemetry/semantic-conventions-genai/pull/291) | thebenignhacker | 3d |
-| [Fix `tool_call_response` field name: `result` → `response` in examples (#326)](https://github.com/open-telemetry/semantic-conventions-genai/pull/326) | app/copilot-swe-agent | 34m |
-| [Generalize review guidance comment (#329)](https://github.com/open-telemetry/semantic-conventions-genai/pull/329) | trask | 29m |
+| [Fix `tool_call_response` field name: `result` → `response` in examples (#326)](https://github.com/open-telemetry/semantic-conventions-genai/pull/326) | app/copilot-swe-agent | 47m |
+| [Generalize review guidance comment (#329)](https://github.com/open-telemetry/semantic-conventions-genai/pull/329) | trask | 42m |
 
 <details>
 <summary>Diagnostics</summary>
 
 ```text
-PR #324
-llm: PRRT_kwDOSUeMrM6K4OHc -> author (The latest comment is a bot review note flagging missing GenAI metrics coverage, so the PR author needs to update the metric list or respond to the issue.)
-llm: PRRT_kwDOSUeMrM6K4OHx -> author (The bot flagged a concrete inconsistency in the scenario output versus the failing SDK call, so the PR author needs to update the scenario.)
-
-PR #322
-llm: PRRT_kwDOSUeMrM6Kth7r -> reviewer (The author has replied with the rationale for the metric removal, so the ball is back with the reviewer to confirm or continue the review.)
-llm: PRRT_kwDOSUeMrM6Ktirm -> reviewer (The latest comment is from the author, so the ball is with the reviewer to respond or acknowledge the point.)
-llm: PRRT_kwDOSUeMrM6K6k6e -> author (The bot flagged a required code change: these attributes should be set at span creation time, so the PR author needs to update the scenario.)
-llm: PRRT_kwDOSUeMrM6K6k6l -> author (The latest comment is a review note from automation requesting a change to set sampling-relevant attributes at span creation time, so the PR author needs to update the scenario.)
-llm: PRRT_kwDOSUeMrM6K6k6x -> author (The bot reviewer raised a concrete code change request, and no author reply appears in the thread yet.)
-llm: PRRT_kwDOSUeMrM6K6k6- -> author (The latest comment is a review bot requesting a changelog edit, so the PR author needs to update the fragment.)
-llm: PRRT_kwDOSUeMrM6K6k7M -> author (The latest comment is a bot review note requesting a cleanup in `model/gen-ai/spans.yaml`, so the PR author needs to make the change or जवाब back.)
-llm: PRRT_kwDOSUeMrM6K6k7R -> author (The bot requested reference scenarios to be updated so sampling-relevant tool attributes are passed at span creation time; that points to PR changes still needed from the author.)
-
-PR #290
-llm: PRRT_kwDOSUeMrM6JXzS- -> author (Automation flags a real issue in `.github/renovate.json5` and requests a config change (`matchDepNames` or capturing `packageName`), so the PR author needs to update the PR.)
-llm: PRRT_kwDOSUeMrM6J7Q-G -> author (Reviewer says this configuration only works on self-hosted Renovate and points to an alternative, so the PR author needs to change the config or respond.)
-
-PR #283
-llm: PRRT_kwDOSUeMrM6KQIPN -> reviewer (The author replied with a fix and asked whether `gen_ai.client.token.usage` should also include `error.type`, so the ball is back with the reviewer to confirm or request more changes.)
-llm: pr-conversation -> reviewer (The author says all review comments are addressed and asks the reviewer for another look, with one remaining question about `error.type`.)
-
-PR #270
-llm: PRRT_kwDOSUeMrM6KX_pc -> author (A reviewer raised a naming concern and offered an alternative; the PR author needs to respond or adjust the model accordingly.)
-llm: PRRT_kwDOSUeMrM6KYD9u -> author (A reviewer asked why the limitation exists and suggested rephrasing, so the author needs to जवाब/clarify and possibly update the wording.)
-
-PR #262
-llm: pr-conversation -> author (The latest reviewer comment offers to add worked examples but asks the author to choose whether to land them in the reference scenario or docs, so the author needs to respond.)
-
-PR #252
-llm: PRRT_kwDOSUeMrM6HO1Cy -> author (The latest comment is a reviewer bot requesting new reference scenario coverage and regenerated outputs, so the PR author needs to implement the requested changes.)
-llm: PRRT_kwDOSUeMrM6IKVVh -> author (A reviewer left a suggestion with no follow-up reply yet, so the author needs to apply or respond to it.)
-llm: pr-conversation -> author (The latest comment is a reviewer asking for clarification about span nesting, so the PR author needs to जवाब/respond or update the PR.)
-
-PR #250
-llm: PRRT_kwDOSUeMrM6HQjux -> reviewer (The author replied with a proposed interpretation and supporting example, so the thread is now waiting on the reviewer to confirm or push back.)
-llm: pr-conversation -> author (The latest comment is a reviewer request to move the changelog entry into a Towncrier fragment and remove the direct CHANGELOG.md edit, so the PR author needs to act.)
-
-PR #238
-llm: pr-conversation -> reviewer (The author responded with a rework addressing the requested changes, so the ball is back with the reviewer to assess the update.)
-
-PR #215
-llm: PRRT_kwDOSUeMrM6Fl7mu -> none (The latest comment is a reviewer acknowledgement that the clarification is directionally aligned and does not ask for further action.)
-llm: pr-conversation -> author (The latest and only comment is from the PR author asking to make a changelog-file change in this PR, so the author still needs to act.)
-
-PR #203
-llm: PRRT_kwDOSUeMrM6HGaQ9 -> reviewer (The author answered the question and clarified the note; the reviewer now needs to confirm or close the thread.)
-llm: PRRT_kwDOSUeMrM6IqQGv -> author (The latest comment is from the reviewer/approver and raises substantive concerns about the proposed metric generalization, so the author needs to respond or revise the PR.)
-llm: pr-conversation -> reviewer (The author’s last comment is a status update that says open review threads still need follow-up, so the ball is back with the reviewer/maintainer side.)
-
-PR #202
-llm: PRRT_kwDOSUeMrM6Is_Ar -> author (A reviewer suggested a concrete model change and nothing in the thread indicates it was addressed, so the PR author needs to respond or update the PR.)
-llm: PRRT_kwDOSUeMrM6ItCxM -> author (The last comment is a reviewer asking for a wording change, so the PR author needs to revise the description and reply.)
-llm: PRRT_kwDOSUeMrM6ItDZZ -> author (The latest comment is from a reviewer asking to remove justification text from the spec, so the PR author needs to update or respond.)
-llm: pr-conversation -> author (The latest comment is from the PR author and says there are still open review threads that need follow-up in this PR, so the author side still has work to do.)
-
-PR #197
-llm: PRRT_kwDOSUeMrM6E-Ear -> reviewer (The reviewer asked whether to add an embeddings token metric, and the author replied with a preferred metric name and pointed to the change they made; the ball is back with the reviewer to confirm/close the thread.)
-llm: PRRT_kwDOSUeMrM6FkB2H -> author (The reviewer’s last comment provided follow-up details and left the question open; the ball is back with the author to respond or decide whether to change the schema.)
-llm: PRRT_kwDOSUeMrM6F1og7 -> author (The latest comment is from a reviewer and ends with a deferred suggestion about future work, so the ball is with the author to respond or follow up.)
-llm: PRRT_kwDOSUeMrM6F1nUT -> author (The latest comment is from a reviewer/approver asking a design question about token phase handling, so the PR author needs to जवाब/decide and respond.)
-llm: PRRT_kwDOSUeMrM6HcJqe -> author (A reviewer suggested a breaking rename approach and there’s no author reply yet, so the PR author needs to respond or update the change.)
-llm: PRRT_kwDOSUeMrM6HcSsx -> author (A reviewer asked whether the spec should use a template or complex object instead of enumerating combinations, so the PR author needs to respond or adjust the design.)
-llm: PRRT_kwDOSUeMrM6HckTh -> author (The latest comment is from a reviewer/approver and raises a substantive design concern/suggestion, so the PR author needs to respond or adjust the implementation.)
-llm: PRRT_kwDOSUeMrM6HcoWo -> author (A reviewer asked whether span attributes and metrics should be in the same PR, so the author needs to जवाब/confirm the scope.)
-llm: pr-conversation -> reviewer (The latest comment is from the author-role participant and asks for a changelog move, so the ball is with the reviewer/maintainer to review the update.)
-
-PR #195
-llm: PRRT_kwDOSUeMrM6KRsU9 -> author (Reviewer asked for a clarification and possible model change; the author needs to respond or update the PR.)
-
-PR #190
-llm: pr-conversation -> reviewer (The author addressed the reviewer’s Towncrier request and reported the changelog move as done, so the ball is back with the reviewer to check and close the thread.)
-
-PR #188
-llm: PRRT_kwDOSUeMrM6EP5P6 -> reviewer (The author answered the reviewer’s question with concrete instrumentation sources and an example trace, so the ball is back with the reviewer to confirm or continue the review.)
-llm: PRRT_kwDOSUeMrM6H_pco -> author (The author’s latest reply is a self-deferral: they acknowledge the concern but say the exact wording will be handled in another PR, so follow-up work is still on the author side.)
-llm: PRRT_kwDOSUeMrM6KiI8p -> author (The bot reviewer says the `invoke_node` span is empty and should contain validation logic, so the PR author needs to update the scenario.)
-llm: PRRT_kwDOSUeMrM6KiI9k -> author (The latest comment is a review bot flagging a mismatch in the report data, so the PR author needs to update the scenario/report or respond to the inconsistency.)
-llm: pr-conversation -> author (A reviewer asked the PR author to move the changelog entry into a Towncrier fragment and remove the direct `CHANGELOG.md` edit, so the author needs to act.)
-
-PR #185
-llm: PRRT_kwDOSUeMrM6DuuPn -> author (The only comment is a reviewer bot request for a terminology alignment change, so the PR author needs to respond or update the spec.)
-llm: PRRT_kwDOSUeMrM6E_Amb -> author (A reviewer asked for a wording fix (“we need a verb here”), so the author needs to update the PR.)
-llm: PRRT_kwDOSUeMrM6E_COY -> author (The reviewer asked for clarification and a prototype, so the PR author needs to जवाब/act next.)
-llm: PRRT_kwDOSUeMrM6HOBHP -> author (A reviewer/approver raised a substantive concern and there is no author reply yet, so the PR author needs to address it.)
-llm: PRRT_kwDOSUeMrM6HOBik -> author (The latest comment is a reviewer request to apply the same feedback to another attribute, so the PR author needs to update or जवाब back.)
-llm: pr-conversation -> author (A reviewer asked for clarification and no author reply has been made, so the author needs to respond.)
-
-PR #184
-llm: pr-conversation -> author (A reviewer requested changes and there is no author follow-up, so the PR author needs to respond and update the branch.)
-
-PR #179
-llm: PRRT_kwDOSUeMrM6Kz7CF -> author (A reviewer left a substantive note about a deprecated feature, so the author should respond or adjust the PR.)
-
-PR #165
-llm: PRRT_kwDOSUeMrM6KdZA7 -> author (The last comment is a bot review requesting changelog and reference-scenario updates, so the PR author needs to act.)
-llm: PRRT_kwDOSUeMrM6KdZBh -> author (The latest comment is a bot review request asking to update the PR description or committed artifacts, so the PR author needs to act.)
-
-PR #164
-llm: PRRT_kwDOSUeMrM6C-3Kb -> author (A reviewer asked for clarification and questioned the need for a new metric, so the PR author needs to जवाब/respond or update the PR.)
-llm: pr-conversation -> author (The latest comment is from an approver requesting the author to move the changelog entry into a Towncrier fragment and remove the direct CHANGELOG.md edit.)
-
-PR #144
-llm: pr-conversation -> reviewer (The latest comment is from the PR author and answers the review thread, so the ball is back with the reviewer/maintainer to respond or decide the remaining open points.)
-
-PR #143
-llm: PRRT_kwDOSUeMrM6F1Aqk -> none (The latest reviewer comment is just an acknowledgment/realization about #144 and does not request any follow-up, so this thread appears closed.)
-llm: PRRT_kwDOSUeMrM6F0-FD -> author (The latest comment from the reviewer asks the author to add reference scenarios for FilePart and UriPart, so the author needs to act next.)
-llm: pr-conversation -> reviewer (The author replied that the requested changelog move is done and the PR was rebased; the ball is back with the reviewer to confirm or continue review.)
-
-PR #112
-llm: pr-conversation -> external (The reviewer says the change cannot work until google-adk relaxes its google-genai dependency and is bumped, so the thread is blocked on an upstream release outside this repository.)
-
 ```
 
 </details>
