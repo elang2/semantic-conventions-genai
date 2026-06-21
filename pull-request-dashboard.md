@@ -23,7 +23,7 @@
 | [Add json-schema annotation for complex attributes, render boilerplate note in templates (#330)](https://github.com/open-telemetry/semantic-conventions-genai/pull/330) | lmolkova | trask&nbsp;✅ | ✅ | ✅ | 1d |
 | [Generalize review guidance comment (#329)](https://github.com/open-telemetry/semantic-conventions-genai/pull/329) | trask |  | ✅ | ✅ | 1d |
 | [Migrate anthropic reference scenario to opentelemetry-util-genai (#324)](https://github.com/open-telemetry/semantic-conventions-genai/pull/324) | AgentGymLeader |  | ✅ | ✅ | 1d |
-| [Update dependency open-telemetry/weaver to v0.24.0 (#331)](https://github.com/open-telemetry/semantic-conventions-genai/pull/331) | app/renovate |  | ✅ | ✅ | 23h |
+| [Update dependency open-telemetry/weaver to v0.24.0 (#331)](https://github.com/open-telemetry/semantic-conventions-genai/pull/331) | app/renovate |  | ✅ | ✅ | 1d |
 
 ## Waiting on authors
 
