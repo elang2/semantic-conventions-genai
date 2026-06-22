@@ -8,7 +8,6 @@
 | PR | Author | Reviewers | CI | Conflicts | Age |
 |---|---|---|:---:|:---:|:---:|
 | [Add `gen_ai.agent.finish_reason` attribute for agent loop termination (#238)](https://github.com/open-telemetry/semantic-conventions-genai/pull/238) | Nik-Reddy | aabmass&nbsp;✅<br>lmolkova&nbsp;🔴<br>MikeGoldsmith&nbsp;✅<br>trask | ✅ | ❌ | 8d |
-| [Update dependency open-telemetry/weaver to v0.24.1 (#331)](https://github.com/open-telemetry/semantic-conventions-genai/pull/331) | app/renovate | lmolkova&nbsp;✅ | ✅ | ✅ | 2d |
 
 ## Waiting on reviewers
 
