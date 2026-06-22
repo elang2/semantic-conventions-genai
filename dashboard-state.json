@@ -459,10 +459,10 @@
         "created_at": "2026-05-26T16:00:15+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
-        "last_activity_at": "2026-06-21T09:06:22+00:00",
+        "last_activity_at": "2026-06-22T20:22:34+00:00",
         "last_approver_activity_at": "2026-06-05T18:30:29+00:00",
         "last_author_activity_at": "2026-06-10T19:01:54+00:00",
-        "last_external_activity_at": "2026-06-21T09:06:22+00:00",
+        "last_external_activity_at": "2026-06-22T20:22:34+00:00",
         "reviewers": [
           {
             "approved": false,
@@ -551,10 +551,10 @@
         "created_at": "2026-05-27T10:55:50+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
-        "last_activity_at": "2026-06-21T11:08:53+00:00",
+        "last_activity_at": "2026-06-22T20:22:33+00:00",
         "last_approver_activity_at": "2026-06-11T00:41:35+00:00",
         "last_author_activity_at": "2026-06-18T14:55:21+00:00",
-        "last_external_activity_at": "2026-06-21T11:08:53+00:00",
+        "last_external_activity_at": "2026-06-22T20:22:33+00:00",
         "reviewers": [
           {
             "approved": true,
@@ -872,7 +872,7 @@
         ],
         "author": "AgentGymLeader",
         "ci_failing_count": 0,
-        "ci_pending_count": 31,
+        "ci_pending_count": 2,
         "conflicts": "no",
         "created_at": "2026-06-10T20:59:37+00:00",
         "is_draft": false,
@@ -997,10 +997,10 @@
         "created_at": "2026-06-19T00:52:26+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
-        "last_activity_at": "2026-06-21T11:08:52+00:00",
+        "last_activity_at": "2026-06-22T20:22:27+00:00",
         "last_approver_activity_at": "2026-06-19T21:11:59+00:00",
         "last_author_activity_at": "2026-06-19T19:37:19+00:00",
-        "last_external_activity_at": "2026-06-21T11:08:52+00:00",
+        "last_external_activity_at": "2026-06-22T20:22:27+00:00",
         "reviewers": [
           {
             "approved": true,
@@ -1121,38 +1121,6 @@
       "pr_number": 330,
       "pr_url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/330",
       "route": "author"
-    },
-    "331": {
-      "facts": {
-        "approval_count": 1,
-        "assignees": [],
-        "author": "app/renovate",
-        "ci_failing_count": 0,
-        "ci_pending_count": 0,
-        "conflicts": "no",
-        "created_at": "2026-06-20T01:10:14+00:00",
-        "is_draft": false,
-        "is_maintenance_bot": true,
-        "last_activity_at": "2026-06-22T20:02:42+00:00",
-        "last_approver_activity_at": "2026-06-22T20:02:42+00:00",
-        "last_author_activity_at": "",
-        "last_external_activity_at": "",
-        "reviewers": [
-          {
-            "approved": true,
-            "approved_non_team": false,
-            "changes_requested": false,
-            "login": "lmolkova",
-            "open_thread": false
-          }
-        ],
-        "waiting_age_basis": "created",
-        "waiting_since": "2026-06-20T01:10:14+00:00"
-      },
-      "failed": false,
-      "pr_number": 331,
-      "pr_url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/331",
-      "route": "maintainer"
     },
     "98": {
       "facts": {
