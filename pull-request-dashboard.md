@@ -23,7 +23,7 @@
 | [Migrate anthropic reference scenario to opentelemetry-util-genai (#324)](https://github.com/open-telemetry/semantic-conventions-genai/pull/324) | AgentGymLeader |  | ✅ | ✅ | 2d |
 | [Update dependency open-telemetry/weaver to v0.24.1 (#331)](https://github.com/open-telemetry/semantic-conventions-genai/pull/331) | app/renovate |  | ✅ | ✅ | 2d |
 | [semconv for a2a protocol (#195)](https://github.com/open-telemetry/semantic-conventions-genai/pull/195) | eternalcuriouslearner | aabmass<br>JWinermaSplunk<br>pwkowalski&nbsp;💬<br>trask | ✅ | ✅ | 13h |
-| [gen-ai: model agent-to-agent handoff as execute_tool span (#98)](https://github.com/open-telemetry/semantic-conventions-genai/pull/98) | Krishnachaitanyakc | lmolkova<br>MikeGoldsmith&nbsp;✅<br>trask | ⏳ | ✅ | <1m |
+| [gen-ai: model agent-to-agent handoff as execute_tool span (#98)](https://github.com/open-telemetry/semantic-conventions-genai/pull/98) | Krishnachaitanyakc | lmolkova<br>MikeGoldsmith&nbsp;✅<br>trask | ✅ | ✅ | <1m |
 
 ## Waiting on authors
 
