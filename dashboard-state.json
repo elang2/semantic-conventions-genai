@@ -180,54 +180,6 @@
       "pr_url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/165",
       "route": "author"
     },
-    "179": {
-      "facts": {
-        "approval_count": 2,
-        "assignees": [
-          "lmolkova"
-        ],
-        "author": "steverao",
-        "ci_failing_count": 0,
-        "ci_pending_count": 0,
-        "conflicts": "no",
-        "created_at": "2026-05-20T09:51:59+00:00",
-        "is_draft": false,
-        "is_maintenance_bot": false,
-        "last_activity_at": "2026-06-23T04:00:18+00:00",
-        "last_approver_activity_at": "2026-06-23T02:31:37+00:00",
-        "last_author_activity_at": "2026-06-23T03:59:13+00:00",
-        "last_external_activity_at": "",
-        "reviewers": [
-          {
-            "approved": true,
-            "approved_non_team": false,
-            "changes_requested": false,
-            "login": "alexmojaki",
-            "open_thread": true
-          },
-          {
-            "approved": true,
-            "approved_non_team": false,
-            "changes_requested": false,
-            "login": "lmolkova",
-            "open_thread": false
-          },
-          {
-            "approved": false,
-            "approved_non_team": false,
-            "changes_requested": false,
-            "login": "trask",
-            "open_thread": false
-          }
-        ],
-        "waiting_age_basis": "oldest_pending_thread",
-        "waiting_since": "2026-06-19T11:01:39+00:00"
-      },
-      "failed": false,
-      "pr_number": 179,
-      "pr_url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/179",
-      "route": "author"
-    },
     "184": {
       "facts": {
         "approval_count": 1,
@@ -993,7 +945,7 @@
         "author": "lmolkova",
         "ci_failing_count": 0,
         "ci_pending_count": 0,
-        "conflicts": "no",
+        "conflicts": "yes",
         "created_at": "2026-06-19T00:52:26+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
@@ -1049,7 +1001,7 @@
         "author": "eavanvalkenburg",
         "ci_failing_count": 0,
         "ci_pending_count": 0,
-        "conflicts": "no",
+        "conflicts": "yes",
         "created_at": "2026-06-19T14:02:22+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
@@ -1072,7 +1024,7 @@
       "failed": false,
       "pr_number": 325,
       "pr_url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/325",
-      "route": "approver"
+      "route": "author"
     },
     "328": {
       "facts": {
@@ -1105,7 +1057,7 @@
         "author": "lmolkova",
         "ci_failing_count": 0,
         "ci_pending_count": 0,
-        "conflicts": "no",
+        "conflicts": "yes",
         "created_at": "2026-06-19T20:48:14+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
@@ -1136,7 +1088,7 @@
         "assignees": [],
         "author": "RKest",
         "ci_failing_count": 0,
-        "ci_pending_count": 30,
+        "ci_pending_count": 0,
         "conflicts": "no",
         "created_at": "2026-06-23T13:41:04+00:00",
         "is_draft": false,
@@ -1163,7 +1115,7 @@
         "author": "Krishnachaitanyakc",
         "ci_failing_count": 0,
         "ci_pending_count": 0,
-        "conflicts": "no",
+        "conflicts": "yes",
         "created_at": "2026-05-05T18:05:53+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
