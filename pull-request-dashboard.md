@@ -21,7 +21,7 @@
 | [Clarify that gen_ai.invoke_agent.duration is about in-proc / internal span (#321)](https://github.com/open-telemetry/semantic-conventions-genai/pull/321) | lmolkova | trask&nbsp;✅ | ✅ | ✅ | 13h |
 | [Add json-schema annotation for complex attributes, render boilerplate note in templates (#330)](https://github.com/open-telemetry/semantic-conventions-genai/pull/330) | lmolkova | trask&nbsp;✅ | ✅ | ✅ | 12h |
 | [Add Agent Framework reference scenario (#325)](https://github.com/open-telemetry/semantic-conventions-genai/pull/325) | eavanvalkenburg | lmolkova&nbsp;💬 | ✅ | ✅ | 6h |
-| [Introduce `gen_ai.agent.{inference,tool}_calls_per_invocation` (#336)](https://github.com/open-telemetry/semantic-conventions-genai/pull/336) | RKest |  | ⏳ | ✅ | 16m |
+| [Introduce `gen_ai.agent.{inference,tool}_calls_per_invocation` (#336)](https://github.com/open-telemetry/semantic-conventions-genai/pull/336) | RKest |  | ⏳ | ✅ | 19m |
 
 ## Waiting on authors
 
