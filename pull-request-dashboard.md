@@ -9,7 +9,7 @@
 |---|---|---|:---:|:---:|:---:|
 | [Add `gen_ai.agent.finish_reason` attribute for agent loop termination (#238)](https://github.com/open-telemetry/semantic-conventions-genai/pull/238) | Nik-Reddy | aabmass&nbsp;✅<br>lmolkova&nbsp;🔴<br>MikeGoldsmith&nbsp;✅<br>trask | ✅ | ❌ | 9d |
 | [Update dependency pydantic-ai-slim to v2 (#337)](https://github.com/open-telemetry/semantic-conventions-genai/pull/337) | app/renovate | trask&nbsp;✅ | ✅ | ✅ | 1h |
-| [Update dependency open-telemetry/weaver to v0.24.2 (#339)](https://github.com/open-telemetry/semantic-conventions-genai/pull/339) | app/renovate | lmolkova&nbsp;✅ | ⏳ | ✅ | 6m |
+| [Update dependency open-telemetry/weaver to v0.24.2 (#339)](https://github.com/open-telemetry/semantic-conventions-genai/pull/339) | app/renovate | lmolkova&nbsp;✅ | ⏳ | ✅ | 7m |
 
 ## Waiting on reviewers
 
