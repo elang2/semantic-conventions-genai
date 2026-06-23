@@ -40,7 +40,7 @@
 | [gen-ai: add run guardrail span and security finding (#262)](https://github.com/open-telemetry/semantic-conventions-genai/pull/262) | nagkumar91 | aabmass<br>habibam&nbsp;✔️<br>sjain700&nbsp;✔️<br>trask | ✅ | ❌ | 7d |
 | [proposal: agent.threat.detection.* attributes + event (closes #132) (#165)](https://github.com/open-telemetry/semantic-conventions-genai/pull/165) | eeee2345 |  | ✅ | ❌ | 4d |
 | [Add prompt versioning and variable support to GenAI attributes (#179)](https://github.com/open-telemetry/semantic-conventions-genai/pull/179) | steverao | alexmojaki&nbsp;💬⁠✅<br>lmolkova&nbsp;✅<br>trask | ✅ | ✅ | 3d |
-| [Add GenAI client metrics to the anthropic reference scenario (#283)](https://github.com/open-telemetry/semantic-conventions-genai/pull/283) | AgentGymLeader | JWinermaSplunk&nbsp;💬<br>MikeGoldsmith&nbsp;🔴 | ✅ | ✅ | 12h |
+| [Add GenAI client metrics to the anthropic reference scenario (#283)](https://github.com/open-telemetry/semantic-conventions-genai/pull/283) | AgentGymLeader | JWinermaSplunk&nbsp;💬<br>MikeGoldsmith&nbsp;🔴 | ✅ | ✅ | 13h |
 | [Propose GenAI agent entity (#270)](https://github.com/open-telemetry/semantic-conventions-genai/pull/270) | aabmass | AgentGymLeader&nbsp;✔️<br>lmolkova&nbsp;✅<br>trask&nbsp;💬 | ✅ | ❌ | 12h |
 | [Align attributes between invoke_agent.internal and execute_tool spans and metrics (#322)](https://github.com/open-telemetry/semantic-conventions-genai/pull/322) | lmolkova | trask&nbsp;✅ | ✅ | ✅ | 10h |
 | [Add Agent Framework reference scenario (#325)](https://github.com/open-telemetry/semantic-conventions-genai/pull/325) | eavanvalkenburg | lmolkova&nbsp;💬 | ✅ | ✅ | 4h |
