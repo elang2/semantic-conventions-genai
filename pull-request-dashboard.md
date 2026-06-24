@@ -17,7 +17,7 @@
 | [\[chore\] Add signal requirement level to yaml and jinja templates (#340)](https://github.com/open-telemetry/semantic-conventions-genai/pull/340) | lmolkova |  | ✅ | ✅ | 8h |
 | [\[chore\] Add basic agent.md (#342)](https://github.com/open-telemetry/semantic-conventions-genai/pull/342) | lmolkova |  | ✅ | ✅ | 6h |
 | [semconv for a2a protocol (#195)](https://github.com/open-telemetry/semantic-conventions-genai/pull/195) | eternalcuriouslearner | aabmass<br>JWinermaSplunk<br>pwkowalski&nbsp;💬⁠✔️<br>trask | ✅ | ✅ | 2h |
-| [Introduce `gen_ai.agent.{inference,tool}_calls_per_invocation` (#336)](https://github.com/open-telemetry/semantic-conventions-genai/pull/336) | RKest | lmolkova&nbsp;💬 | ✅ | ✅ | 1m |
+| [Introduce `gen_ai.agent.{inference,tool}_calls_per_invocation` (#336)](https://github.com/open-telemetry/semantic-conventions-genai/pull/336) | RKest | lmolkova&nbsp;💬 | ✅ | ✅ | 2m |
 
 ## Waiting on authors
 
