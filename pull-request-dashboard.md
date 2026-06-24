@@ -16,7 +16,7 @@
 | [Add Agent Framework reference scenario (#325)](https://github.com/open-telemetry/semantic-conventions-genai/pull/325) | eavanvalkenburg | lmolkova | ✅ | ❌ | 1d |
 | [\[chore\] Add signal requirement level to yaml and jinja templates (#340)](https://github.com/open-telemetry/semantic-conventions-genai/pull/340) | lmolkova |  | ✅ | ✅ | 5h |
 | [\[chore\] Add basic agent.md (#342)](https://github.com/open-telemetry/semantic-conventions-genai/pull/342) | lmolkova |  | ✅ | ✅ | 3h |
-| [semconv for a2a protocol (#195)](https://github.com/open-telemetry/semantic-conventions-genai/pull/195) | eternalcuriouslearner | aabmass<br>JWinermaSplunk<br>pwkowalski&nbsp;💬⁠✔️<br>trask | ✅ | ✅ | <1m |
+| [semconv for a2a protocol (#195)](https://github.com/open-telemetry/semantic-conventions-genai/pull/195) | eternalcuriouslearner | aabmass<br>JWinermaSplunk<br>pwkowalski&nbsp;💬⁠✔️<br>trask | ⏳ | ✅ | 2m |
 
 ## Waiting on authors
 
