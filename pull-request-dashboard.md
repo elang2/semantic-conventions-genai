@@ -14,14 +14,13 @@
 | PR | Author | Reviewers | CI | Conflicts | Age |
 |---|---|---|:---:|:---:|:---:|
 | [gen-ai: make input-messages BlobPart content optional and add stripped_reason (#144)](https://github.com/open-telemetry/semantic-conventions-genai/pull/144) | Mandark-droid | lmolkova<br>trask | ✅ | ❌ | 13d |
-| [Add experimental GenAI context selection event (#190)](https://github.com/open-telemetry/semantic-conventions-genai/pull/190) | caioribeiroclw-pixel | trask | ❌ | ❌ | 10d |
 | [Update dependency google-adk to v2 (#328)](https://github.com/open-telemetry/semantic-conventions-genai/pull/328) | app/renovate |  | ❌ | ✅ | 4d |
 | [Migrate anthropic reference scenario to opentelemetry-util-genai (#324)](https://github.com/open-telemetry/semantic-conventions-genai/pull/324) | AgentGymLeader |  | ✅ | ✅ | 4d |
 | [gen-ai: model agent-to-agent handoff as execute_tool span (#98)](https://github.com/open-telemetry/semantic-conventions-genai/pull/98) | Krishnachaitanyakc | lmolkova<br>MikeGoldsmith&nbsp;✅<br>trask | ✅ | ❌ | 2d |
 | [Clarify that gen_ai.invoke_agent.duration is about in-proc / internal span (#321)](https://github.com/open-telemetry/semantic-conventions-genai/pull/321) | lmolkova | trask&nbsp;✅ | ✅ | ✅ | 1d |
 | [Add json-schema annotation for complex attributes, render boilerplate note in templates (#330)](https://github.com/open-telemetry/semantic-conventions-genai/pull/330) | lmolkova | trask&nbsp;✅ | ✅ | ❌ | 1d |
 | [Add Agent Framework reference scenario (#325)](https://github.com/open-telemetry/semantic-conventions-genai/pull/325) | eavanvalkenburg | lmolkova | ✅ | ❌ | 22h |
-| [\[chore\] Add signal requirement level to yaml and jinja templates (#340)](https://github.com/open-telemetry/semantic-conventions-genai/pull/340) | lmolkova |  | ⏳ | ✅ | <1m |
+| [\[chore\] Add signal requirement level to yaml and jinja templates (#340)](https://github.com/open-telemetry/semantic-conventions-genai/pull/340) | lmolkova |  | ⏳ | ✅ | 23m |
 
 ## Waiting on authors
 
@@ -44,9 +43,10 @@
 | [Add GenAI client metrics to the anthropic reference scenario (#283)](https://github.com/open-telemetry/semantic-conventions-genai/pull/283) | AgentGymLeader | JWinermaSplunk&nbsp;💬<br>MikeGoldsmith&nbsp;🔴 | ✅ | ✅ | 1d |
 | [Propose GenAI agent entity (#270)](https://github.com/open-telemetry/semantic-conventions-genai/pull/270) | aabmass | AgentGymLeader&nbsp;✔️<br>lmolkova&nbsp;✅<br>trask&nbsp;💬 | ✅ | ❌ | 1d |
 | [Align attributes between invoke_agent.internal and execute_tool spans and metrics (#322)](https://github.com/open-telemetry/semantic-conventions-genai/pull/322) | lmolkova | trask&nbsp;✅ | ✅ | ❌ | 1d |
-| [semconv for a2a protocol (#195)](https://github.com/open-telemetry/semantic-conventions-genai/pull/195) | eternalcuriouslearner | aabmass<br>JWinermaSplunk<br>pwkowalski&nbsp;💬<br>trask | ✅ | ✅ | 23h |
+| [semconv for a2a protocol (#195)](https://github.com/open-telemetry/semantic-conventions-genai/pull/195) | eternalcuriouslearner | aabmass<br>JWinermaSplunk<br>pwkowalski&nbsp;💬<br>trask | ✅ | ✅ | 1d |
 | [Introduce `gen_ai.agent.{inference,tool}_calls_per_invocation` (#336)](https://github.com/open-telemetry/semantic-conventions-genai/pull/336) | RKest | lmolkova&nbsp;💬 | ✅ | ✅ | 4h |
-| [Rename gen_ai.workflow.duration to gen_ai.invoke_workflow.duration (#341)](https://github.com/open-telemetry/semantic-conventions-genai/pull/341) | lmolkova |  | ✅ | ✅ | 38m |
+| [Rename gen_ai.workflow.duration to gen_ai.invoke_workflow.duration (#341)](https://github.com/open-telemetry/semantic-conventions-genai/pull/341) | lmolkova |  | ✅ | ✅ | 1h |
+| [Add experimental GenAI context selection event (#190)](https://github.com/open-telemetry/semantic-conventions-genai/pull/190) | caioribeiroclw-pixel | lmolkova&nbsp;🔴<br>trask | ❌ | ❌ | <1m |
 
 ## Waiting on external
 
