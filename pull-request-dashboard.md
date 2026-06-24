@@ -20,7 +20,7 @@
 | [Clarify that gen_ai.invoke_agent.duration is about in-proc / internal span (#321)](https://github.com/open-telemetry/semantic-conventions-genai/pull/321) | lmolkova | trask&nbsp;✅ | ✅ | ✅ | 1d |
 | [Add json-schema annotation for complex attributes, render boilerplate note in templates (#330)](https://github.com/open-telemetry/semantic-conventions-genai/pull/330) | lmolkova | trask&nbsp;✅ | ✅ | ❌ | 1d |
 | [Add Agent Framework reference scenario (#325)](https://github.com/open-telemetry/semantic-conventions-genai/pull/325) | eavanvalkenburg | lmolkova | ✅ | ❌ | 22h |
-| [\[chore\] Add signal requirement level to yaml and jinja templates (#340)](https://github.com/open-telemetry/semantic-conventions-genai/pull/340) | lmolkova |  | ⏳ | ✅ | 23m |
+| [\[chore\] Add signal requirement level to yaml and jinja templates (#340)](https://github.com/open-telemetry/semantic-conventions-genai/pull/340) | lmolkova |  | ⏳ | ✅ | 24m |
 
 ## Waiting on authors
 
