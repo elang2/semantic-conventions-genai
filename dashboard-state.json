@@ -866,14 +866,14 @@
         "assignees": [],
         "author": "thebenignhacker",
         "ci_failing_count": 0,
-        "ci_pending_count": 32,
+        "ci_pending_count": 0,
         "conflicts": "no",
         "created_at": "2026-06-15T18:28:37+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
-        "last_activity_at": "2026-06-25T02:28:13+00:00",
+        "last_activity_at": "2026-06-25T02:29:05+00:00",
         "last_approver_activity_at": "2026-06-24T06:22:55+00:00",
-        "last_author_activity_at": "2026-06-25T02:25:16+00:00",
+        "last_author_activity_at": "2026-06-25T02:29:05+00:00",
         "last_external_activity_at": "2026-06-24T20:12:14+00:00",
         "reviewers": [
           {
