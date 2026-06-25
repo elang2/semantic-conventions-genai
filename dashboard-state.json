@@ -1006,7 +1006,7 @@
     },
     "330": {
       "facts": {
-        "approval_count": 1,
+        "approval_count": 2,
         "assignees": [],
         "author": "lmolkova",
         "ci_failing_count": 0,
@@ -1015,13 +1015,13 @@
         "created_at": "2026-06-19T20:48:14+00:00",
         "is_draft": false,
         "is_maintenance_bot": false,
-        "last_activity_at": "2026-06-25T05:22:07+00:00",
-        "last_approver_activity_at": "2026-06-24T23:24:30+00:00",
+        "last_activity_at": "2026-06-25T17:25:22+00:00",
+        "last_approver_activity_at": "2026-06-25T17:25:22+00:00",
         "last_author_activity_at": "2026-06-25T05:22:07+00:00",
         "last_external_activity_at": "",
         "reviewers": [
           {
-            "approved": false,
+            "approved": true,
             "approved_non_team": false,
             "changes_requested": false,
             "login": "JWinermaSplunk",
@@ -1041,7 +1041,7 @@
       "failed": false,
       "pr_number": 330,
       "pr_url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/330",
-      "route": "approver"
+      "route": "maintainer"
     },
     "336": {
       "facts": {
