@@ -46,6 +46,13 @@ attribute_groups:
         requirement_level: recommended
       - ref: gen_ai.usage.output_tokens
         requirement_level: recommended
+      - ref: gen_ai.usage.cost.amount
+        requirement_level: recommended
+      - ref: gen_ai.usage.cost.currency
+        requirement_level:
+          conditionally_required: If `gen_ai.usage.cost.amount` is set.
+      - ref: gen_ai.usage.cost.source
+        requirement_level: recommended
 
   - id: attributes.gen_ai.content
     visibility: internal

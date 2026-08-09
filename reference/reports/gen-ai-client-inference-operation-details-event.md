@@ -22,6 +22,7 @@
 | gen_ai.request.seed | (none) |
 | gen_ai.request.stream | (none) |
 | gen_ai.request.top_k | (none) |
+| gen_ai.usage.cost.currency | (none) |
 | server.port | [anthropic], [azure-ai-inference], [openai] |
 
 ## Recommended
@@ -43,6 +44,8 @@
 | gen_ai.response.time_to_first_chunk | (none) |
 | gen_ai.usage.cache_creation.input_tokens | [anthropic] |
 | gen_ai.usage.cache_read.input_tokens | [anthropic] |
+| gen_ai.usage.cost.amount | (none) |
+| gen_ai.usage.cost.source | (none) |
 | gen_ai.usage.input_tokens | [anthropic], [aws-bedrock], [azure-ai-inference], [cohere], [google-genai], [groq], [litellm], [mistralai], [openai], [vertexai] |
 | gen_ai.usage.output_tokens | [anthropic], [aws-bedrock], [azure-ai-inference], [cohere], [google-genai], [groq], [litellm], [mistralai], [openai], [vertexai] |
 | gen_ai.usage.reasoning.output_tokens | (none) |

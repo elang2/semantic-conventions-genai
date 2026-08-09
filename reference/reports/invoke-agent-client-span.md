@@ -22,6 +22,7 @@
 | gen_ai.output.type | [azure-ai-foundry] |
 | gen_ai.request.choice.count | (none) |
 | gen_ai.request.seed | (none) |
+| gen_ai.usage.cost.currency | (none) |
 | server.port | [aws-bedrock-agent], [azure-ai-foundry], [openai-assistants] |
 
 ## Recommended
@@ -39,6 +40,8 @@
 | gen_ai.response.finish_reasons | (none) |
 | gen_ai.usage.cache_creation.input_tokens | (none) |
 | gen_ai.usage.cache_read.input_tokens | (none) |
+| gen_ai.usage.cost.amount | (none) |
+| gen_ai.usage.cost.source | (none) |
 | gen_ai.usage.input_tokens | [azure-ai-foundry], [google-genai], [openai-assistants] |
 | gen_ai.usage.output_tokens | [azure-ai-foundry], [google-genai], [openai-assistants] |
 | server.address | [aws-bedrock-agent], [azure-ai-foundry], [openai-assistants] |
