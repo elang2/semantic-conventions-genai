@@ -206,6 +206,11 @@ this attribute MUST NOT be set.
 Floating-point representation is acceptable for observability purposes.
 This attribute is not intended for financial accounting.
 
+For systems that distinguish multiple cost perspectives (list price,
+contracted price, effective price after discounts), this attribute
+SHOULD record the effective cost — the amount actually charged after
+any applicable discounts or commitments.
+
 **[23] `gen_ai.usage.cost.source`:** Distinguishes provider-reported costs from locally computed values.
 Backends can use this to avoid mixing billed actuals with estimates
 in the same aggregation.

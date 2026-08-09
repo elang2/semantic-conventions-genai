@@ -319,6 +319,11 @@ this attribute MUST NOT be set.
 Floating-point representation is acceptable for observability purposes.
 This attribute is not intended for financial accounting.
 
+For systems that distinguish multiple cost perspectives (list price,
+contracted price, effective price after discounts), this attribute
+SHOULD record the effective cost — the amount actually charged after
+any applicable discounts or commitments.
+
 **[34] `gen_ai.usage.cost.currency`:** MUST be a three-letter ISO 4217 alphabetic code (e.g. "USD", "EUR").
 When the cost source does not specify a currency, instrumentations
 SHOULD default to "USD" and document this assumption.
