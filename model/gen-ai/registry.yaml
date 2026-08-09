@@ -1039,3 +1039,51 @@ attributes:
       what `gen_ai.workflow.name` means in the context of that framework.
     examples: ["multi_agent_rag", "customer_support_pipeline"]
     stability: development
+  - key: gen_ai.usage.cost.amount
+    type: double
+    brief: The monetary cost of a single GenAI operation.
+    note: |
+      The cost in the currency specified by `gen_ai.usage.cost.currency`.
+      When the provider includes cost in its response (e.g. via a header or
+      response field), that value SHOULD be used directly. When cost is not
+      returned by the provider, instrumentations MAY compute it from token
+      counts and a user-supplied pricing table.
+
+      Instrumentations MUST NOT hard-code pricing assumptions. If no
+      cost value is available from the provider or from user configuration,
+      this attribute MUST NOT be set.
+
+      Floating-point representation is acceptable for observability purposes.
+      This attribute is not intended for financial accounting.
+    examples: [0.0023, 0.015, 0.42]
+    stability: development
+  - key: gen_ai.usage.cost.currency
+    type: string
+    brief: ISO 4217 currency code for the cost value.
+    note: |
+      MUST be a three-letter ISO 4217 alphabetic code (e.g. "USD", "EUR").
+      When the cost source does not specify a currency, instrumentations
+      SHOULD default to "USD" and document this assumption.
+    examples: ["USD", "EUR", "GBP"]
+    stability: development
+  - key: gen_ai.usage.cost.source
+    type:
+      members:
+        - id: provider
+          stability: development
+          value: "provider"
+          brief: Cost reported directly by the GenAI provider in the response.
+        - id: pricing_table
+          stability: development
+          value: "pricing_table"
+          brief: Cost computed from token counts and a locally configured pricing table.
+        - id: estimate
+          stability: development
+          value: "estimate"
+          brief: Cost is a rough estimate (e.g. from cached pricing that may be stale).
+    brief: The source of the cost value.
+    note: |
+      Distinguishes provider-reported costs from locally computed values.
+      Backends can use this to avoid mixing billed actuals with estimates
+      in the same aggregation.
+    stability: development
