@@ -1055,6 +1055,11 @@ attributes:
 
       Floating-point representation is acceptable for observability purposes.
       This attribute is not intended for financial accounting.
+
+      For systems that distinguish multiple cost perspectives (list price,
+      contracted price, effective price after discounts), this attribute
+      SHOULD record the effective cost — the amount actually charged after
+      any applicable discounts or commitments.
     examples: [0.0023, 0.015, 0.42]
     stability: development
   - key: gen_ai.usage.cost.currency
