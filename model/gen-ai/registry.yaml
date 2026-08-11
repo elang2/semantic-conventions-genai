@@ -1068,7 +1068,9 @@ attributes:
     note: |
       MUST be a three-letter ISO 4217 alphabetic code (e.g. "USD", "EUR").
       When the cost source does not specify a currency, instrumentations
-      SHOULD default to "USD" and document this assumption.
+      MUST obtain the currency from explicit user configuration. If no
+      currency can be determined, `gen_ai.usage.cost.amount` MUST NOT
+      be set.
     examples: ["USD", "EUR", "GBP"]
     stability: development
   - key: gen_ai.usage.cost.source

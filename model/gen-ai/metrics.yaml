@@ -46,7 +46,7 @@ metrics:
   - name: gen_ai.client.operation.cost
     requirement_level: recommended
     instrument: histogram
-    unit: "{currency_unit}"
+    unit: "{cost}"
     brief: 'Monetary cost of a single GenAI client operation.'
     note: |
       Records the cost of a single GenAI operation (e.g. one inference call,
