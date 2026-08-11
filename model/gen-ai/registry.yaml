@@ -1123,6 +1123,10 @@ attributes:
           stability: development
           value: "estimate"
           brief: Cost is a rough estimate (e.g. from cached pricing that may be stale).
+          note: |
+            Enrichment MUST NOT replace a cost value already recorded by
+            an in-path component. This source is intended to fill an
+            absence, not to override a provider or pricing_table value.
     brief: The source of the cost value.
     note: |
       Distinguishes provider-reported costs from locally computed values.
