@@ -1058,8 +1058,38 @@ attributes:
 
       For systems that distinguish multiple cost perspectives (list price,
       contracted price, effective price after discounts), this attribute
-      SHOULD record the effective cost — the amount actually charged after
+      SHOULD record the effective cost, the amount actually charged after
       any applicable discounts or commitments.
+
+      For parent spans that invoke sub-operations (e.g. agent or workflow
+      spans), this attribute records only the cost of the span's own
+      operation. Cost of child spans is NOT included. This matches the
+      aggregation rule for `gen_ai.usage.input_tokens` and
+      `gen_ai.usage.output_tokens` and ensures the attribute is safely
+      summable across a trace without double-counting.
+
+      ## Collection guidance
+
+      Cost is typically not available to client-library auto-instrumentations
+      because pricing knowledge does not exist at that layer. The expected
+      producers of this attribute are:
+
+      1. **Provider response** (`cost.source=provider`): Some providers
+         return cost directly in the response body or headers. Client-level
+         instrumentation CAN record this value when present.
+      2. **Gateway, proxy, or router** (`cost.source=pricing_table`): LLM
+         gateways that terminate provider credentials typically own a pricing
+         table as configuration. They compute cost at response-completion
+         time from token counts in the response. This is the most common
+         production pattern.
+      3. **Backend enrichment** (`cost.source=estimate`): A collector
+         processor or backend pipeline joins token counts against a pricing
+         table after the fact, filling the attribute when no in-path
+         component recorded it.
+
+      Client-library instrumentations (OpenAI SDK, Anthropic SDK, etc.)
+      are NOT expected to emit this attribute unless the provider response
+      includes cost directly.
     examples: [0.0023, 0.015, 0.42]
     stability: development
   - key: gen_ai.usage.cost.currency
@@ -1084,6 +1114,11 @@ attributes:
           stability: development
           value: "pricing_table"
           brief: Cost computed from token counts and a locally configured pricing table.
+          note: |
+            The recorded value reflects the pricing table in force at the
+            time cost was computed. Consumers MUST NOT recompute cost from
+            token counts and a later pricing table. The value is frozen at
+            emission time.
         - id: estimate
           stability: development
           value: "estimate"
