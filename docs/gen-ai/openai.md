@@ -153,7 +153,9 @@ version identifier used by that system.
 
 **[12] `gen_ai.usage.cost.currency`:** MUST be a three-letter ISO 4217 alphabetic code (e.g. "USD", "EUR").
 When the cost source does not specify a currency, instrumentations
-SHOULD default to "USD" and document this assumption.
+MUST obtain the currency from explicit user configuration. If no
+currency can be determined, `gen_ai.usage.cost.amount` MUST NOT
+be set.
 
 **[13] `openai.request.service_tier`:** If the request includes a service_tier and the value is not 'auto'.
 
@@ -195,8 +197,38 @@ This attribute is not intended for financial accounting.
 
 For systems that distinguish multiple cost perspectives (list price,
 contracted price, effective price after discounts), this attribute
-SHOULD record the effective cost — the amount actually charged after
+SHOULD record the effective cost, the amount actually charged after
 any applicable discounts or commitments.
+
+For parent spans that invoke sub-operations (e.g. agent or workflow
+spans), this attribute records only the cost of the span's own
+operation. Cost of child spans is NOT included. This matches the
+aggregation rule for `gen_ai.usage.input_tokens` and
+`gen_ai.usage.output_tokens` and ensures the attribute is safely
+summable across a trace without double-counting.
+
+## Collection guidance
+
+Cost is typically not available to client-library auto-instrumentations
+because pricing knowledge does not exist at that layer. The expected
+producers of this attribute are:
+
+1. **Provider response** (`cost.source=provider`): Some providers
+   return cost directly in the response body or headers. Client-level
+   instrumentation CAN record this value when present.
+2. **Gateway, proxy, or router** (`cost.source=pricing_table`): LLM
+   gateways that terminate provider credentials typically own a pricing
+   table as configuration. They compute cost at response-completion
+   time from token counts in the response. This is the most common
+   production pattern.
+3. **Backend enrichment** (`cost.source=estimate`): A collector
+   processor or backend pipeline joins token counts against a pricing
+   table after the fact, filling the attribute when no in-path
+   component recorded it.
+
+Client-library instrumentations (OpenAI SDK, Anthropic SDK, etc.)
+are NOT expected to emit this attribute unless the provider response
+includes cost directly.
 
 **[24] `gen_ai.usage.cost.source`:** Distinguishes provider-reported costs from locally computed values.
 Backends can use this to avoid mixing billed actuals with estimates
@@ -353,9 +385,18 @@ and SHOULD be provided **at span creation time** (if provided at all):
 
 | Value | Description | Stability |
 | --- | --- | --- |
-| `estimate` | Cost is a rough estimate (e.g. from cached pricing that may be stale). | ![Development](https://img.shields.io/badge/-development-blue) |
-| `pricing_table` | Cost computed from token counts and a locally configured pricing table. | ![Development](https://img.shields.io/badge/-development-blue) |
+| `estimate` | Cost is a rough estimate (e.g. from cached pricing that may be stale). [35] | ![Development](https://img.shields.io/badge/-development-blue) |
+| `pricing_table` | Cost computed from token counts and a locally configured pricing table. [36] | ![Development](https://img.shields.io/badge/-development-blue) |
 | `provider` | Cost reported directly by the GenAI provider in the response. | ![Development](https://img.shields.io/badge/-development-blue) |
+
+**[35]:** Enrichment MUST NOT replace a cost value already recorded by
+an in-path component. This source is intended to fill an
+absence, not to override a provider or pricing_table value.
+
+**[36]:** The recorded value reflects the pricing table in force at the
+time cost was computed. Consumers MUST NOT recompute cost from
+token counts and a later pricing table. The value is frozen at
+emission time.
 
 ---
 
