@@ -188,6 +188,9 @@ def run_agent_reference():
             ),
         )
 
+        from google.adk.agents.run_config import RunConfig
+
+        run_config = RunConfig(max_llm_calls=10)
         session_service = InMemorySessionService()
         runner = Runner(agent=agent, app_name="test_app", session_service=session_service)
 
@@ -216,6 +219,7 @@ def run_agent_reference():
                 with _reference_tracer.start_as_current_span(
                     "invoke_agent test_agent", attributes=agent_span_attributes
                 ) as agent_span:
+                    agent_span.set_attribute("gen_ai.agent.iteration_budget.limit", run_config.max_llm_calls)
                     agent_span.set_attribute("gen_ai.request.choice.count", request_choice_count)
                     agent_span.set_attribute("gen_ai.request.max_tokens", request_max_tokens)
                     agent_span.set_attribute("gen_ai.request.temperature", request_temperature)
@@ -234,7 +238,8 @@ def run_agent_reference():
                         json.dumps([{"role": "user", "parts": [{"type": "text", "content": input_text}]}]),
                     )
                     agent_span.set_attribute("gen_ai.tool.definitions", json.dumps(tool_defs))
-                    usage_metadata = None
+                    total_input_tokens = 0
+                    total_output_tokens = 0
                     finish_reason = None
                     last_text = ""
                     async for event in runner.run_async(
@@ -244,12 +249,18 @@ def run_agent_reference():
                             role="user",
                             parts=[types.Part(text=input_text)],
                         ),
+                        run_config=run_config,
                     ):
                         if getattr(event, "usage_metadata", None) is not None:
-                            # Only model-response events carry usage, so this counts
-                            # one inference call per LLM round-trip.
                             call_counts["inference"] += 1
-                            usage_metadata = event.usage_metadata
+                            um = event.usage_metadata
+                            pt = getattr(um, "prompt_token_count", 0) or 0
+                            ct = getattr(um, "candidates_token_count", 0) or 0
+                            if isinstance(um, dict):
+                                pt = um.get("prompt_token_count", 0) or 0
+                                ct = um.get("candidates_token_count", 0) or 0
+                            total_input_tokens += pt
+                            total_output_tokens += ct
                         event_finish_reason = getattr(event, "finish_reason", None)
                         if isinstance(event, dict):
                             event_finish_reason = event.get("finish_reason")
@@ -260,16 +271,19 @@ def run_agent_reference():
                             if text:
                                 last_text = text
                                 print(f"    -> {text[:60]}")
-                    if usage_metadata is not None:
-                        prompt_token_count = getattr(usage_metadata, "prompt_token_count", None)
-                        candidate_token_count = getattr(usage_metadata, "candidates_token_count", None)
-                        if isinstance(usage_metadata, dict):
-                            prompt_token_count = usage_metadata.get("prompt_token_count")
-                            candidate_token_count = usage_metadata.get("candidates_token_count")
-                        if prompt_token_count is not None:
-                            agent_span.set_attribute("gen_ai.usage.input_tokens", prompt_token_count)
-                        if candidate_token_count is not None:
-                            agent_span.set_attribute("gen_ai.usage.output_tokens", candidate_token_count)
+                    if total_input_tokens > 0:
+                        agent_span.set_attribute("gen_ai.usage.input_tokens", total_input_tokens)
+                    if total_output_tokens > 0:
+                        agent_span.set_attribute("gen_ai.usage.output_tokens", total_output_tokens)
+                    agent_span.set_attribute("gen_ai.agent.iteration_budget.consumed", call_counts["inference"])
+                    agent_span.set_attribute(
+                        "gen_ai.agent.token_budget.consumed", total_input_tokens + total_output_tokens
+                    )
+                    # Capture gap: gen_ai.agent.token_budget.limit and
+                    # gen_ai.invoke_agent.token_budget.utilization cannot be
+                    # emitted here. ADK's only resource constraint is
+                    # max_llm_calls (a call-count limit), not a cumulative
+                    # token budget. No token budget denominator is available.
                     if finish_reason is not None:
                         agent_span.set_attribute(
                             "gen_ai.response.finish_reasons",
@@ -289,7 +303,7 @@ def run_agent_reference():
 
         asyncio.run(_run())
 
-        # Both metrics are scoped to the agent invocation and emitted alongside
+        # All metrics are scoped to the agent invocation and emitted alongside
         # the invoke_agent (internal) span, dimensioned by the agent name.
         metric_attributes = {"gen_ai.agent.name": agent.name}
         _inference_calls.record(call_counts["inference"], metric_attributes)

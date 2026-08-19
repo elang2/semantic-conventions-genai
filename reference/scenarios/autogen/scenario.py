@@ -146,6 +146,7 @@ def run_agent_reference():
                     json.dumps([{"role": "user", "parts": [{"type": "text", "content": input_text}]}]),
                 )
                 agent_span.set_attribute("gen_ai.tool.definitions", json.dumps(tool_defs))
+                agent_span.set_attribute("gen_ai.agent.iteration_budget.limit", 2)
                 # AutoGen delegates the LLM call to the underlying openai client,
                 # whose own instrumentation owns the inference span and the
                 # inference-operation-details event. This scenario emits only the
@@ -183,6 +184,14 @@ def run_agent_reference():
                     agent_span.set_attribute("gen_ai.usage.input_tokens", total_input_tokens)
                 if total_output_tokens:
                     agent_span.set_attribute("gen_ai.usage.output_tokens", total_output_tokens)
+                agent_span.set_attribute("gen_ai.agent.iteration_budget.consumed", len(captured_results))
+                agent_span.set_attribute("gen_ai.agent.token_budget.consumed", total_input_tokens + total_output_tokens)
+                # Capture gap: gen_ai.agent.token_budget.limit and
+                # gen_ai.invoke_agent.token_budget.utilization cannot be
+                # emitted here. This scenario uses max_tool_iterations (an
+                # iteration cap), not TokenUsageTermination. No token budget
+                # denominator is available without configuring
+                # TokenUsageTermination, which requires a team-level runner.
                 output_messages = json.dumps(
                     [
                         {
