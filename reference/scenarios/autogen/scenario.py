@@ -109,13 +109,14 @@ def run_agent_reference():
     try:
         agent_name = "test_agent"
         agent_description = "Reference AutoGen assistant."
+        MAX_TOOL_ITERATIONS = 4
         agent = AssistantAgent(
             name=agent_name,
             model_client=model_client,
             description=agent_description,
             system_message=system_message,
             tools=[get_weather],
-            max_tool_iterations=2,
+            max_tool_iterations=MAX_TOOL_ITERATIONS,
         )
 
         async def _run():
@@ -146,7 +147,7 @@ def run_agent_reference():
                     json.dumps([{"role": "user", "parts": [{"type": "text", "content": input_text}]}]),
                 )
                 agent_span.set_attribute("gen_ai.tool.definitions", json.dumps(tool_defs))
-                agent_span.set_attribute("gen_ai.agent.iteration_budget.limit", 2)
+                agent_span.set_attribute("gen_ai.agent.iteration_budget.limit", MAX_TOOL_ITERATIONS)
                 # AutoGen delegates the LLM call to the underlying openai client,
                 # whose own instrumentation owns the inference span and the
                 # inference-operation-details event. This scenario emits only the
@@ -184,14 +185,12 @@ def run_agent_reference():
                     agent_span.set_attribute("gen_ai.usage.input_tokens", total_input_tokens)
                 if total_output_tokens:
                     agent_span.set_attribute("gen_ai.usage.output_tokens", total_output_tokens)
-                agent_span.set_attribute("gen_ai.agent.iteration_budget.consumed", len(captured_results))
-                agent_span.set_attribute("gen_ai.agent.token_budget.consumed", total_input_tokens + total_output_tokens)
                 # Capture gap: gen_ai.agent.token_budget.limit and
                 # gen_ai.invoke_agent.token_budget.utilization cannot be
-                # emitted here. This scenario uses max_tool_iterations (an
-                # iteration cap), not TokenUsageTermination. No token budget
-                # denominator is available without configuring
-                # TokenUsageTermination, which requires a team-level runner.
+                # emitted here. AutoGen exposes a cumulative token cap via
+                # TokenUsageTermination, but it is a team-level termination
+                # construct; this single-agent scenario therefore cannot emit
+                # gen_ai.agent.token_budget.limit.
                 output_messages = json.dumps(
                     [
                         {

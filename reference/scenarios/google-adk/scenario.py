@@ -275,10 +275,6 @@ def run_agent_reference():
                         agent_span.set_attribute("gen_ai.usage.input_tokens", total_input_tokens)
                     if total_output_tokens > 0:
                         agent_span.set_attribute("gen_ai.usage.output_tokens", total_output_tokens)
-                    agent_span.set_attribute("gen_ai.agent.iteration_budget.consumed", call_counts["inference"])
-                    agent_span.set_attribute(
-                        "gen_ai.agent.token_budget.consumed", total_input_tokens + total_output_tokens
-                    )
                     # Capture gap: gen_ai.agent.token_budget.limit and
                     # gen_ai.invoke_agent.token_budget.utilization cannot be
                     # emitted here. ADK's only resource constraint is

@@ -11,10 +11,8 @@
       "gen_ai.tool.type"
     ],
     "gen_ai.invoke_agent.internal": [
-      "gen_ai.agent.iteration_budget.consumed",
       "gen_ai.agent.iteration_budget.limit",
       "gen_ai.agent.name",
-      "gen_ai.agent.token_budget.consumed",
       "gen_ai.conversation.id",
       "gen_ai.input.messages",
       "gen_ai.operation.name",
