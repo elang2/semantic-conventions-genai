@@ -95,13 +95,19 @@ cycle across frameworks (for example, a tool-iteration cap may
 permit one additional final model request).
 
 Examples of framework parameters that map to this attribute:
-LangChain `max_iterations`, CrewAI `max_iter`, OpenAI Agents SDK
-`max_turns`, AutoGen `max_tool_iterations`.
+CrewAI `max_iter`, Microsoft Agent Framework
+`max_iterations`, AutoGen `max_tool_iterations`.
+
+Semantic conventions for individual GenAI frameworks SHOULD
+document what an iteration means in the context of that
+framework.
 
 Limits counting something other than control-loop cycles — graph
-traversal depth (e.g. LangGraph `recursion_limit`) or runner-wide
-inference counts spanning multiple agents (e.g. Google ADK
-`max_llm_calls`) — MUST NOT be recorded in this attribute.
+traversal depth (e.g. LangGraph `recursion_limit`), run-scoped
+caps that persist across agent handoffs (e.g. OpenAI Agents SDK
+`max_turns`), or runner-wide inference counts spanning multiple
+agents (e.g. Google ADK `max_llm_calls`) — MUST NOT be recorded
+in this attribute.
 
 Instrumentations MUST NOT synthesize an iteration budget by
 multiplying other limits.

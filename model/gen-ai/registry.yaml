@@ -1042,7 +1042,7 @@ attributes:
       CrewAI `max_iter`, Microsoft Agent Framework
       `max_iterations`, AutoGen `max_tool_iterations`.
 
-      Semantic conventions for individual GenAI frameworks MUST
+      Semantic conventions for individual GenAI frameworks SHOULD
       document what an iteration means in the context of that
       framework.
 

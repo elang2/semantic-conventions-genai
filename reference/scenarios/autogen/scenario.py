@@ -147,9 +147,9 @@ def run_agent_reference():
                     json.dumps([{"role": "user", "parts": [{"type": "text", "content": input_text}]}]),
                 )
                 agent_span.set_attribute("gen_ai.tool.definitions", json.dumps(tool_defs))
-                configured_iters = getattr(agent, "_max_tool_iterations", None)
-                if configured_iters is not None:
-                    agent_span.set_attribute("gen_ai.agent.iteration_budget.limit", configured_iters)
+                # In production, read the configured value from the framework's public API.
+                if max_tool_iterations is not None:
+                    agent_span.set_attribute("gen_ai.agent.iteration_budget.limit", max_tool_iterations)
                 # AutoGen delegates the LLM call to the underlying openai client,
                 # whose own instrumentation owns the inference span and the
                 # inference-operation-details event. This scenario emits only the
