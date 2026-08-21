@@ -1025,3 +1025,38 @@ attributes:
       what `gen_ai.workflow.name` means in the context of that framework.
     examples: ["multi_agent_rag", "customer_support_pipeline"]
     stability: development
+  - key: gen_ai.agent.iteration_budget.limit
+    type: int
+    brief: Maximum iterations configured for this agent invocation.
+    note: |
+      The maximum number of iterations configured for this agent
+      invocation. An iteration is one pass through the agent's control
+      loop: a model request together with any resulting tool executions.
+
+      Instrumentations SHOULD record the framework's configured value
+      verbatim, without normalization. Exact bounds may differ by one
+      cycle across frameworks (for example, a tool-iteration cap may
+      permit one additional final model request).
+
+      Examples of framework parameters that map to this attribute:
+      CrewAI `max_iter`, Microsoft Agent Framework
+      `max_iterations`, AutoGen `max_tool_iterations`.
+
+      Semantic conventions for individual GenAI frameworks MUST
+      document what an iteration means in the context of that
+      framework.
+
+      Limits counting something other than control-loop cycles — graph
+      traversal depth (e.g. LangGraph `recursion_limit`), run-scoped
+      caps that persist across agent handoffs (e.g. OpenAI Agents SDK
+      `max_turns`), or runner-wide inference counts spanning multiple
+      agents (e.g. Google ADK `max_llm_calls`) — MUST NOT be recorded
+      in this attribute.
+
+      Instrumentations MUST NOT synthesize an iteration budget by
+      multiplying other limits.
+
+      If no iteration budget is configured, this attribute SHOULD NOT
+      be set.
+    examples: [10, 25, 50]
+    stability: development

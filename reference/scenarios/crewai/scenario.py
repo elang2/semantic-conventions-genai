@@ -178,6 +178,7 @@ def run_agent():
     tools = [get_weather]
 
     researcher_role = "Researcher"
+    max_iter = 15
     researcher = Agent(
         role=researcher_role,
         goal="Find information",
@@ -186,6 +187,7 @@ def run_agent():
         llm=llm,
         verbose=False,
         allow_delegation=False,
+        max_iter=max_iter,
     )
 
     task_description = "Use the get_weather tool to report the weather in Seattle."
@@ -199,6 +201,9 @@ def run_agent():
     with _reference_tracer.start_as_current_span(
         f"invoke_agent {researcher_role}", attributes=agent_span_attributes
     ) as agent_span:
+        agent_iter = getattr(researcher, "max_iter", None)
+        if agent_iter is not None:
+            agent_span.set_attribute("gen_ai.agent.iteration_budget.limit", agent_iter)
         agent_span.set_attribute("gen_ai.request.choice.count", request_choice_count)
         agent_span.set_attribute("gen_ai.request.max_tokens", request_max_tokens)
         agent_span.set_attribute("gen_ai.request.temperature", request_temperature)

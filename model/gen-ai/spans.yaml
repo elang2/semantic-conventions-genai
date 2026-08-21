@@ -113,12 +113,20 @@ attribute_groups:
             library allows to set only a single model per agent. It SHOULD NOT
             be populated for agents that support multiple models or dynamic selection.
 
+  - id: attributes.gen_ai.agent.budget
+    visibility: internal
+    attributes:
+      - ref: gen_ai.agent.iteration_budget.limit
+        requirement_level:
+          recommended: When the framework exposes a configured iteration limit.
+
   - id: attributes.gen_ai.invoke_agent.common
     visibility: internal
     attributes:
       - ref_group: attributes.gen_ai.usage
       - ref_group: attributes.gen_ai.content
       - ref_group: attributes.gen_ai.error
+      - ref_group: attributes.gen_ai.agent.budget
       - ref_group: attributes.gen_ai.invoked_agent.internal.common
       - ref: gen_ai.operation.name
         requirement_level: required

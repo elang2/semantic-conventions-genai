@@ -109,13 +109,14 @@ def run_agent_reference():
     try:
         agent_name = "test_agent"
         agent_description = "Reference AutoGen assistant."
+        max_tool_iterations = 2
         agent = AssistantAgent(
             name=agent_name,
             model_client=model_client,
             description=agent_description,
             system_message=system_message,
             tools=[get_weather],
-            max_tool_iterations=2,
+            max_tool_iterations=max_tool_iterations,
         )
 
         async def _run():
@@ -146,6 +147,9 @@ def run_agent_reference():
                     json.dumps([{"role": "user", "parts": [{"type": "text", "content": input_text}]}]),
                 )
                 agent_span.set_attribute("gen_ai.tool.definitions", json.dumps(tool_defs))
+                configured_iters = getattr(agent, "_max_tool_iterations", None)
+                if configured_iters is not None:
+                    agent_span.set_attribute("gen_ai.agent.iteration_budget.limit", configured_iters)
                 # AutoGen delegates the LLM call to the underlying openai client,
                 # whose own instrumentation owns the inference span and the
                 # inference-operation-details event. This scenario emits only the

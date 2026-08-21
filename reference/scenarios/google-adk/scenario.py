@@ -189,6 +189,10 @@ def run_agent_reference():
         )
 
         session_service = InMemorySessionService()
+        # Capture gap: gen_ai.agent.iteration_budget.limit is not emitted here.
+        # ADK's max_llm_calls (RunConfig) counts every inference call across the
+        # entire runner including sub-agents, not per-agent loop iterations.
+        # That scope does not match iteration_budget.limit's definition.
         runner = Runner(agent=agent, app_name="test_app", session_service=session_service)
 
         async def _run():
