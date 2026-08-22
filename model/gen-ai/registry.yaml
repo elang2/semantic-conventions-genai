@@ -1077,12 +1077,12 @@ attributes:
       1. **Provider response** (`cost.source=provider`): Some providers
          return cost directly in the response body or headers. Client-level
          instrumentation CAN record this value when present.
-      2. **Gateway, proxy, or router** (`cost.source=pricing_table`): LLM
+      2. **Gateway, proxy, or router** (`cost.source=local`): LLM
          gateways that terminate provider credentials typically own a pricing
          table as configuration. They compute cost at response-completion
          time from token counts in the response. This is the most common
          production pattern.
-      3. **Backend enrichment** (`cost.source=estimate`): A collector
+      3. **Backend enrichment** (`cost.source=local`): A collector
          processor or backend pipeline joins token counts against a pricing
          table after the fact, filling the attribute when no in-path
          component recorded it.
@@ -1090,6 +1090,10 @@ attributes:
       Client-library instrumentations (OpenAI SDK, Anthropic SDK, etc.)
       are NOT expected to emit this attribute unless the provider response
       includes cost directly.
+
+      Different spans in the same trace MAY have different `cost.source`
+      values. Consumers summing cost across a trace should expect a mix of
+      provider-reported and locally-computed values.
     examples: [0.0023, 0.015, 0.42]
     stability: development
   - key: gen_ai.usage.cost.currency
@@ -1109,27 +1113,24 @@ attributes:
         - id: provider
           stability: development
           value: "provider"
-          brief: Cost reported directly by the GenAI provider in the response.
-        - id: pricing_table
-          stability: development
-          value: "pricing_table"
-          brief: Cost computed from token counts and a locally configured pricing table.
+          brief: Cost value received from upstream (provider, gateway, or broker).
           note: |
-            The recorded value reflects the pricing table in force at the
-            time cost was computed. Consumers MUST NOT recompute cost from
-            token counts and a later pricing table. The value is frozen at
-            emission time.
-        - id: estimate
+            Use this when the cost was not computed by the emitting
+            instrumentor. From the client's perspective, a gateway that
+            returns a cost in the response is indistinguishable from the
+            provider itself.
+        - id: local
           stability: development
-          value: "estimate"
-          brief: Cost is a rough estimate (e.g. from cached pricing that may be stale).
+          value: "local"
+          brief: Cost computed by the emitting instrumentor from a pricing table or model.
           note: |
-            Enrichment MUST NOT replace a cost value already recorded by
-            an in-path component. This source is intended to fill an
-            absence, not to override a provider or pricing_table value.
+            The recorded value reflects the pricing knowledge in force at
+            the time cost was computed and is not expected to be recomputed
+            from token counts and a later pricing table.
     brief: The source of the cost value.
     note: |
-      Distinguishes provider-reported costs from locally computed values.
-      Backends can use this to avoid mixing billed actuals with estimates
-      in the same aggregation.
+      Distinguishes costs received from upstream from costs computed
+      locally by the instrumentor. If the operator has a more accurate
+      local value than what was received from upstream, it MAY override
+      the value. The `cost.source` attribute indicates which source won.
     stability: development

@@ -80,7 +80,7 @@ def run_chat():
         if response_cost is not None:
             span.set_attribute("gen_ai.usage.cost.amount", response_cost)
             span.set_attribute("gen_ai.usage.cost.currency", "USD")
-            span.set_attribute("gen_ai.usage.cost.source", "pricing_table")
+            span.set_attribute("gen_ai.usage.cost.source", "local")
             _cost_histogram.record(
                 response_cost,
                 attributes={
@@ -88,7 +88,7 @@ def run_chat():
                     "gen_ai.provider.name": provider_name,
                     "gen_ai.request.model": request_model,
                     "gen_ai.usage.cost.currency": "USD",
-                    "gen_ai.usage.cost.source": "pricing_table",
+                    "gen_ai.usage.cost.source": "local",
                 },
             )
 

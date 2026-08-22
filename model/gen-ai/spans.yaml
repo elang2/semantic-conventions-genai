@@ -48,7 +48,8 @@ attribute_groups:
         requirement_level:
           conditionally_required: If `gen_ai.usage.cost.amount` is set.
       - ref: gen_ai.usage.cost.source
-        requirement_level: recommended
+        requirement_level:
+          conditionally_required: If `gen_ai.usage.cost.amount` is set.
 
   - id: attributes.gen_ai.usage.breakdown
     visibility: internal
