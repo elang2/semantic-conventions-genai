@@ -19,8 +19,6 @@
 | gen_ai.output.type | (none) |
 | gen_ai.request.choice.count | [agent-framework], [crewai], [google-adk] |
 | gen_ai.request.seed | [agent-framework], [autogen], [crewai], [pydantic-ai] |
-| gen_ai.usage.cost.currency | (none) |
-| gen_ai.usage.cost.source | (none) |
 
 ## Recommended
 
@@ -36,7 +34,6 @@
 | gen_ai.response.finish_reasons | [autogen], [crewai], [google-adk], [openai-agents], [pydantic-ai] |
 | gen_ai.usage.cache_read.input_tokens | [agent-framework] |
 | gen_ai.usage.cache_write.input_tokens | (none) |
-| gen_ai.usage.cost.amount | (none) |
 | gen_ai.usage.input_tokens | [agent-framework], [autogen], [crewai], [google-adk], [langchain], [openai-agents], [pydantic-ai] |
 | gen_ai.usage.output_tokens | [agent-framework], [autogen], [crewai], [google-adk], [langchain], [openai-agents], [pydantic-ai] |
 

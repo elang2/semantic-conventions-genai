@@ -22,8 +22,6 @@
 | gen_ai.output.type | [azure-ai-foundry] |
 | gen_ai.request.choice.count | (none) |
 | gen_ai.request.seed | (none) |
-| gen_ai.usage.cost.currency | (none) |
-| gen_ai.usage.cost.source | (none) |
 | server.port | [aws-bedrock-agent], [azure-ai-foundry], [openai-assistants] |
 
 ## Recommended
@@ -44,7 +42,6 @@
 | gen_ai.usage.audio.output_tokens | (none) |
 | gen_ai.usage.cache_read.input_tokens | (none) |
 | gen_ai.usage.cache_write.input_tokens | (none) |
-| gen_ai.usage.cost.amount | (none) |
 | gen_ai.usage.image.cache_read.input_tokens | (none) |
 | gen_ai.usage.image.input_tokens | (none) |
 | gen_ai.usage.image.output_tokens | (none) |

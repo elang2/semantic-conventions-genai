@@ -42,6 +42,10 @@ attribute_groups:
         requirement_level: recommended
       - ref: gen_ai.usage.output_tokens
         requirement_level: recommended
+
+  - id: attributes.gen_ai.usage.cost
+    visibility: internal
+    attributes:
       - ref: gen_ai.usage.cost.amount
         requirement_level: recommended
       - ref: gen_ai.usage.cost.currency
@@ -197,6 +201,7 @@ spans:
       - ref_group: attributes.gen_ai.common
       - ref_group: attributes.gen_ai.address_and_port
       - ref_group: attributes.gen_ai.usage
+      - ref_group: attributes.gen_ai.usage.cost
       - ref_group: attributes.gen_ai.usage.breakdown
       - ref_group: attributes.gen_ai.content
       - ref_group: attributes.gen_ai.error
