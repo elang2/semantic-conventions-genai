@@ -322,14 +322,13 @@ Datastore: A tool used by the agent to access and query structured or unstructur
 **[35] `gen_ai.usage.cache_write.input_tokens`:** The value SHOULD be included in `gen_ai.usage.input_tokens`.
 
 **[36] `gen_ai.usage.cost.amount`:** The cost in the currency specified by `gen_ai.usage.cost.currency`.
-When the provider includes cost in its response (e.g. via a header or
-response field), that value SHOULD be used directly. When cost is not
-returned by the provider, instrumentations MAY compute it from token
-counts and a user-supplied pricing table.
+When the cost is not present in the response, the emitting component
+MAY compute it; see `gen_ai.usage.cost.source` for the two cases.
 
-Instrumentations MUST NOT hard-code pricing assumptions. If no
-cost value is available from the provider or from user configuration,
-this attribute MUST NOT be set.
+The recorded amount reflects the pricing data in force at recording
+time and MUST NOT be recomputed against later pricing data. Backend
+or collector-side enrichment that reconstructs cost after the fact is
+out of scope for `gen_ai.usage.cost.*`.
 
 Floating-point representation is acceptable for observability purposes.
 This attribute is not intended for financial accounting.
@@ -346,29 +345,6 @@ aggregation rule for `gen_ai.usage.input_tokens` and
 `gen_ai.usage.output_tokens` and ensures the attribute is safely
 summable across a trace without double-counting.
 
-## Collection guidance
-
-Cost is typically not available to client-library auto-instrumentations
-because pricing knowledge does not exist at that layer. The expected
-producers of this attribute are:
-
-1. **Provider response** (`cost.source=provider`): Some providers
-   return cost directly in the response body or headers. Client-level
-   instrumentation CAN record this value when present.
-2. **Gateway, proxy, or router** (`cost.source=local`): LLM
-   gateways that terminate provider credentials typically own a pricing
-   table as configuration. They compute cost at response-completion
-   time from token counts in the response. This is the most common
-   production pattern.
-3. **Backend enrichment** (`cost.source=local`): A collector
-   processor or backend pipeline joins token counts against a pricing
-   table after the fact, filling the attribute when no in-path
-   component recorded it.
-
-Client-library instrumentations (OpenAI SDK, Anthropic SDK, etc.)
-are NOT expected to emit this attribute unless the provider response
-includes cost directly.
-
 Different spans in the same trace MAY have different `cost.source`
 values. Consumers summing cost across a trace should expect a mix of
 provider-reported and locally-computed values.
@@ -379,10 +355,9 @@ MUST obtain the currency from explicit user configuration. If no
 currency can be determined, `gen_ai.usage.cost.amount` MUST NOT
 be set.
 
-**[38] `gen_ai.usage.cost.source`:** Distinguishes costs received from upstream from costs computed
-locally by the instrumentor. If the operator has a more accurate
-local value than what was received from upstream, it MAY override
-the value. The `cost.source` attribute indicates which source won.
+**[38] `gen_ai.usage.cost.source`:** Distinguishes cost values received in the response from cost values
+computed at recording time by the emitting component. See the enum
+member notes for the receive-vs-derive test.
 
 **[39] `gen_ai.usage.image.cache_read.input_tokens`:** The value SHOULD be included in `gen_ai.usage.cache_read.input_tokens` and in `gen_ai.usage.image.input_tokens`.
 
@@ -531,14 +506,18 @@ what `gen_ai.workflow.name` means in the context of that framework.
 
 | Value | Description | Stability |
 | --- | --- | --- |
-| `local` | Cost computed by the emitting instrumentor from a pricing table or model. [53] | ![Development](https://img.shields.io/badge/-development-blue) |
-| `provider` | Cost value received from upstream (provider, gateway, or broker). [54] | ![Development](https://img.shields.io/badge/-development-blue) |
+| `local` | The emitting component computed the value itself. [53] | ![Development](https://img.shields.io/badge/-development-blue) |
+| `provider` | The cost value was present in the response the client received. [54] | ![Development](https://img.shields.io/badge/-development-blue) |
 
-**[53]:** The recorded value reflects the pricing knowledge in force at
-the time cost was computed and is not expected to be recomputed
-from token counts and a later pricing table.
+**[53]:** No cost was present in the response; the emitting component
+computed the value at recording time from token counts and
+pricing data it owns, such as a configured pricing table or
+maintained pricing data bundled as a versioned dependency
+(e.g. `genai-prices`). Client-library instrumentations are not
+expected to emit cost unless it is present in the response.
 
-**[54]:** Use this when the cost was not computed by the emitting
-instrumentor. From the client's perspective, a gateway that
-returns a cost in the response is indistinguishable from the
-provider itself.
+**[54]:** The cost value was present in the response the instrumented
+client received, whether from the model provider directly or
+from an intermediary (gateway, proxy, router) that priced the
+request. From the client's perspective these are
+indistinguishable; the value is passed through unmodified.
