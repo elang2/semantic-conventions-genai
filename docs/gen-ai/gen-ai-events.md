@@ -440,8 +440,7 @@ When the attribute is recorded on events, it MUST be recorded in structured form
 computed the value at recording time from token counts and
 pricing data it owns, such as a configured pricing table or
 maintained pricing data bundled as a versioned dependency
-(e.g. `genai-prices`). Client-library instrumentations are not
-expected to emit cost unless it is present in the response.
+(e.g. `genai-prices`).
 
 **[48]:** The cost value was present in the response the instrumented
 client received, whether from the model provider directly or
