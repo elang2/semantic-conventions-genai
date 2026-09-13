@@ -352,13 +352,6 @@ contracted price, effective price after discounts), this attribute
 SHOULD record the effective cost, the amount actually charged after
 any applicable discounts or commitments.
 
-For parent spans that invoke sub-operations (e.g. agent or workflow
-spans), this attribute records only the cost of the span's own
-operation. Cost of child spans is NOT included. This matches the
-aggregation rule for `gen_ai.usage.input_tokens` and
-`gen_ai.usage.output_tokens` and ensures the attribute is safely
-summable across a trace without double-counting.
-
 Different spans in the same trace MAY have different `cost.source`
 values. Consumers summing cost across a trace should expect a mix of
 provider-reported and locally-computed values.
