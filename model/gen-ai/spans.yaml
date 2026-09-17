@@ -47,7 +47,11 @@ attribute_groups:
     visibility: internal
     attributes:
       - ref: gen_ai.usage.cost.amount
-        requirement_level: recommended
+        requirement_level:
+          conditionally_required: >
+            If the response the client received contains a cost value and a
+            currency can be determined for it as described on
+            `gen_ai.usage.cost.currency`.
       - ref: gen_ai.usage.cost.currency
         requirement_level:
           conditionally_required: If `gen_ai.usage.cost.amount` is set.

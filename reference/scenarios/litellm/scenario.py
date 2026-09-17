@@ -15,7 +15,7 @@ _reference_tracer = reference_tracer()
 _cost_histogram = reference_meter().create_histogram(
     name="gen_ai.client.operation.cost",
     unit="{cost}",
-    description="Monetary cost of a single GenAI client operation.",
+    description="Monetary cost of a single GenAI inference operation.",
 )
 
 

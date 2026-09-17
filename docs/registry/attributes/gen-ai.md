@@ -69,7 +69,7 @@
 | <a id="gen-ai-usage-audio-output-tokens" href="#gen-ai-usage-audio-output-tokens">`gen_ai.usage.audio.output_tokens`</a> | ![Development](https://img.shields.io/badge/-development-blue) | int | The number of audio output tokens. [34] | `240` |
 | <a id="gen-ai-usage-cache-read-input-tokens" href="#gen-ai-usage-cache-read-input-tokens">`gen_ai.usage.cache_read.input_tokens`</a> | ![Development](https://img.shields.io/badge/-development-blue) | int | The number of input tokens served from a provider-managed cache. [35] | `50` |
 | <a id="gen-ai-usage-cache-write-input-tokens" href="#gen-ai-usage-cache-write-input-tokens">`gen_ai.usage.cache_write.input_tokens`</a> | ![Development](https://img.shields.io/badge/-development-blue) | int | The number of input tokens written to a provider-managed cache. [36] | `25` |
-| <a id="gen-ai-usage-cost-amount" href="#gen-ai-usage-cost-amount">`gen_ai.usage.cost.amount`</a> | ![Development](https://img.shields.io/badge/-development-blue) | double | The monetary cost of a single GenAI operation. [37] | `0.0023`; `0.015`; `0.42` |
+| <a id="gen-ai-usage-cost-amount" href="#gen-ai-usage-cost-amount">`gen_ai.usage.cost.amount`</a> | ![Development](https://img.shields.io/badge/-development-blue) | double | The monetary cost of a single GenAI inference operation. [37] | `0.0023`; `0.015`; `0.42` |
 | <a id="gen-ai-usage-cost-currency" href="#gen-ai-usage-cost-currency">`gen_ai.usage.cost.currency`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | ISO 4217 currency code for the cost value. [38] | `USD`; `EUR`; `GBP` |
 | <a id="gen-ai-usage-cost-source" href="#gen-ai-usage-cost-source">`gen_ai.usage.cost.source`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | The source of the cost value. [39] | `provider`; `local` |
 | <a id="gen-ai-usage-image-cache-read-input-tokens" href="#gen-ai-usage-image-cache-read-input-tokens">`gen_ai.usage.image.cache_read.input_tokens`</a> | ![Development](https://img.shields.io/badge/-development-blue) | int | The number of image input tokens served from a provider-managed cache. [40] | `128` |
@@ -336,8 +336,23 @@ Datastore: A tool used by the agent to access and query structured or unstructur
 **[36] `gen_ai.usage.cache_write.input_tokens`:** The value SHOULD be included in `gen_ai.usage.input_tokens`.
 
 **[37] `gen_ai.usage.cost.amount`:** The cost in the currency specified by `gen_ai.usage.cost.currency`.
-When the cost is not present in the response, the emitting component
-MAY compute it; see `gen_ai.usage.cost.source` for the two cases.
+When the cost is not present in the response, a component that owns
+pricing data computes it at recording time; see
+`gen_ai.usage.cost.source` for the two cases.
+
+Cost is therefore recorded by whichever component can determine it. Any
+instrumentation of the client can record it when the value is present in
+the response, since doing so copies a field the client already received.
+When it is absent, only a component configured with pricing data can
+record it. A component with neither is **not expected to acquire pricing
+data in order to record cost**. Whether to maintain pricing data at all is
+the component's choice. When the response does not carry the value, the condition on this
+attribute is unmet, and the guidance below is what applies.
+
+When the condition on this attribute is not satisfied, instrumentations
+SHOULD still record the cost if they can determine it and its currency at
+recording time without an additional network request. Instrumentations are
+NOT expected to treat this attribute as opt-in in that case.
 
 The recorded amount reflects the pricing data in force at recording
 time and MUST NOT be recomputed against later pricing data. Backend
@@ -351,6 +366,13 @@ For systems that distinguish multiple cost perspectives (list price,
 contracted price, effective price after discounts), this attribute
 SHOULD record the effective cost, the amount actually charged after
 any applicable discounts or commitments.
+
+This attribute records only the cost of the operation being recorded and
+MUST NOT include cost attributable to nested operations. Note that this
+alone does not make cost summable across a trace: if two layers of
+instrumentation both record the same operation, a consumer summing every
+value will double-count, and de-duplicating overlapping records is the
+consumer's responsibility.
 
 Different spans in the same trace MAY have different `cost.source`
 values. Consumers summing cost across a trace should expect a mix of

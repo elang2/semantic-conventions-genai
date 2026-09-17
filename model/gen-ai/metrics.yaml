@@ -47,20 +47,31 @@ metrics:
     requirement_level: recommended
     instrument: histogram
     unit: "{cost}"
-    brief: 'Monetary cost of a single GenAI client operation.'
+    brief: 'Monetary cost of a single GenAI inference operation.'
     note: |
-      Records the cost of a single GenAI operation (e.g. one inference call,
-      one embedding request) in the currency declared by
-      `gen_ai.usage.cost.currency`.
+      Records the cost of a single GenAI inference operation in the currency
+      declared by `gen_ai.usage.cost.currency`.
 
-      This metric SHOULD be reported when the cost is available from the
-      provider response or can be reliably computed from a user-supplied
-      pricing configuration. Instrumentations MUST NOT report this metric
-      when cost cannot be determined.
+      This metric SHOULD be reported when the cost amount can be determined at
+      recording time without an additional network request, from the response
+      the client received or from pricing data the emitting component owns, and
+      a currency can be determined for it as described on
+      `gen_ai.usage.cost.currency`. Instrumentations MUST NOT report it when
+      either cannot be determined.
 
-      When both this metric and `gen_ai.client.token.usage` are available,
-      backends can correlate token volume with spend without requiring
-      offline pricing lookups.
+      Instrumentations MUST NOT report this metric for an operation that does not
+      itself perform model inference. Among the well-known `gen_ai.operation.name`
+      values, `chat`, `generate_content`, `text_completion` and `embeddings` are
+      examples of operations that perform inference, and `plan` performs inference
+      while also invoking others, so it reports only the cost of its own model
+      call, on the same principle as the own-operation rule on
+      `gen_ai.usage.cost.amount`. Operations that orchestrate others, such as
+      `invoke_agent` and `invoke_workflow`, are out of scope because cost recorded
+      against them would roll up charges belonging to the inference calls nested
+      inside them. Operations that incur charges of a different kind, such as
+      `execute_tool` and `retrieval`, and operations that perform no inference at
+      all, such as `fetch_response`, are out of scope because their charges are not
+      model cost.
     stability: development
     annotations:
       code_generation:
@@ -70,7 +81,7 @@ metrics:
       - ref: gen_ai.usage.cost.currency
         requirement_level: required
       - ref: gen_ai.usage.cost.source
-        requirement_level: recommended
+        requirement_level: required
   - name: gen_ai.client.operation.duration
     requirement_level: recommended
     instrument: histogram

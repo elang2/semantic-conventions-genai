@@ -1041,11 +1041,26 @@ attributes:
     stability: development
   - key: gen_ai.usage.cost.amount
     type: double
-    brief: The monetary cost of a single GenAI operation.
+    brief: The monetary cost of a single GenAI inference operation.
     note: |
       The cost in the currency specified by `gen_ai.usage.cost.currency`.
-      When the cost is not present in the response, the emitting component
-      MAY compute it; see `gen_ai.usage.cost.source` for the two cases.
+      When the cost is not present in the response, a component that owns
+      pricing data computes it at recording time; see
+      `gen_ai.usage.cost.source` for the two cases.
+
+      Cost is therefore recorded by whichever component can determine it. Any
+      instrumentation of the client can record it when the value is present in
+      the response, since doing so copies a field the client already received.
+      When it is absent, only a component configured with pricing data can
+      record it. A component with neither is **not expected to acquire pricing
+      data in order to record cost**. Whether to maintain pricing data at all is
+      the component's choice. When the response does not carry the value, the condition on this
+      attribute is unmet, and the guidance below is what applies.
+
+      When the condition on this attribute is not satisfied, instrumentations
+      SHOULD still record the cost if they can determine it and its currency at
+      recording time without an additional network request. Instrumentations are
+      NOT expected to treat this attribute as opt-in in that case.
 
       The recorded amount reflects the pricing data in force at recording
       time and MUST NOT be recomputed against later pricing data. Backend
@@ -1059,6 +1074,13 @@ attributes:
       contracted price, effective price after discounts), this attribute
       SHOULD record the effective cost, the amount actually charged after
       any applicable discounts or commitments.
+
+      This attribute records only the cost of the operation being recorded and
+      MUST NOT include cost attributable to nested operations. Note that this
+      alone does not make cost summable across a trace: if two layers of
+      instrumentation both record the same operation, a consumer summing every
+      value will double-count, and de-duplicating overlapping records is the
+      consumer's responsibility.
 
       Different spans in the same trace MAY have different `cost.source`
       values. Consumers summing cost across a trace should expect a mix of
