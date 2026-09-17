@@ -185,31 +185,15 @@ very different unit magnitude SHOULD adjust them.
 
 | Name | Instrument Type | Unit (UCUM) | Description | Stability | Entity Associations |
 | -------- | --------------- | ----------- | -------------- | --------- | ------ |
-| `gen_ai.client.operation.cost` | Histogram | `{cost}` | Monetary cost of a single GenAI inference operation. [1] | ![Development](https://img.shields.io/badge/-development-blue) | |
+| `gen_ai.client.operation.cost` | Histogram | `{cost}` | Monetary cost of a single GenAI client operation. [1] | ![Development](https://img.shields.io/badge/-development-blue) | |
 
-**[1]:** Records the cost of a single GenAI inference operation in the currency
-declared by `gen_ai.usage.cost.currency`.
+**[1]:** Records the cost of a single GenAI operation in the currency declared by
+`gen_ai.usage.cost.currency`.
 
-This metric SHOULD be reported when the cost amount can be determined at
-recording time without an additional network request, from the response
-the client received or from pricing data the emitting component owns, and
-a currency can be determined for it as described on
-`gen_ai.usage.cost.currency`. Instrumentations MUST NOT report it when
-either cannot be determined.
-
-Instrumentations MUST NOT report this metric for an operation that does not
-itself perform model inference. Among the well-known `gen_ai.operation.name`
-values, `chat`, `generate_content`, `text_completion` and `embeddings` are
-examples of operations that perform inference, and `plan` performs inference
-while also invoking others, so it reports only the cost of its own model
-call, on the same principle as the own-operation rule on
-`gen_ai.usage.cost.amount`. Operations that orchestrate others, such as
-`invoke_agent` and `invoke_workflow`, are out of scope because cost recorded
-against them would roll up charges belonging to the inference calls nested
-inside them. Operations that incur charges of a different kind, such as
-`execute_tool` and `retrieval`, and operations that perform no inference at
-all, such as `fetch_response`, are out of scope because their charges are not
-model cost.
+This metric SHOULD be reported when the cost amount and its currency can
+both be determined at recording time, either from the response the client
+received or from pricing data the emitting component owns.
+Instrumentations MUST NOT report it when either cannot be determined.
 
 **Requirement level:** [Recommended](https://github.com/open-telemetry/semantic-conventions/blob/v1.44.0/docs/general/signal-requirement-level.md).
 
@@ -220,10 +204,10 @@ model cost.
 | [`gen_ai.operation.name`](/docs/registry/attributes/gen-ai.md) | ![Development](https://img.shields.io/badge/-development-blue) | `Required` | string | The name of the operation being performed. [1] | `chat`; `generate_content`; `text_completion` |
 | [`gen_ai.provider.name`](/docs/registry/attributes/gen-ai.md) | ![Development](https://img.shields.io/badge/-development-blue) | `Required` | string | The Generative AI provider as identified by the client or server instrumentation. [2] | `openai`; `gcp.gen_ai`; `gcp.vertex_ai` |
 | [`gen_ai.usage.cost.currency`](/docs/registry/attributes/gen-ai.md) | ![Development](https://img.shields.io/badge/-development-blue) | `Required` | string | ISO 4217 currency code for the cost value. [3] | `USD`; `EUR`; `GBP` |
-| [`gen_ai.usage.cost.source`](/docs/registry/attributes/gen-ai.md) | ![Development](https://img.shields.io/badge/-development-blue) | `Required` | string | The source of the cost value. [4] | `provider`; `local` |
-| [`gen_ai.request.model`](/docs/registry/attributes/gen-ai.md) | ![Development](https://img.shields.io/badge/-development-blue) | `Conditionally Required` If available. | string | The name of the GenAI model a request is being made to. [5] | `gpt-4` |
-| [`server.port`](https://github.com/open-telemetry/semantic-conventions/blob/v1.44.0/docs/registry/attributes/server.md) | ![Stable](https://img.shields.io/badge/-stable-lightgreen) | `Conditionally Required` If `server.address` is set. | int | GenAI server port. [6] | `80`; `8080`; `443` |
+| [`gen_ai.request.model`](/docs/registry/attributes/gen-ai.md) | ![Development](https://img.shields.io/badge/-development-blue) | `Conditionally Required` If available. | string | The name of the GenAI model a request is being made to. [4] | `gpt-4` |
+| [`server.port`](https://github.com/open-telemetry/semantic-conventions/blob/v1.44.0/docs/registry/attributes/server.md) | ![Stable](https://img.shields.io/badge/-stable-lightgreen) | `Conditionally Required` If `server.address` is set. | int | GenAI server port. [5] | `80`; `8080`; `443` |
 | [`gen_ai.response.model`](/docs/registry/attributes/gen-ai.md) | ![Development](https://img.shields.io/badge/-development-blue) | `Recommended` | string | The name of the model that generated the response. | `gpt-4-0613` |
+| [`gen_ai.usage.cost.source`](/docs/registry/attributes/gen-ai.md) | ![Development](https://img.shields.io/badge/-development-blue) | `Recommended` | string | The source of the cost value. [6] | `provider`; `local` |
 | [`server.address`](https://github.com/open-telemetry/semantic-conventions/blob/v1.44.0/docs/registry/attributes/server.md) | ![Stable](https://img.shields.io/badge/-stable-lightgreen) | `Recommended` | string | GenAI server address. [7] | `example.com`; `10.1.2.80`; `/tmp/my.sock` |
 
 **[1] `gen_ai.operation.name`:** If one of the predefined values applies, but specific system uses a different name it's RECOMMENDED to document it in the semantic conventions for specific GenAI system and use system-specific name in the instrumentation. If a different name is not documented, instrumentation libraries SHOULD use applicable predefined value.
@@ -252,13 +236,13 @@ MUST obtain the currency from explicit user configuration. If no
 currency can be determined, `gen_ai.usage.cost.amount` MUST NOT
 be set.
 
-**[4] `gen_ai.usage.cost.source`:** Distinguishes cost values received in the response from cost values
+**[4] `gen_ai.request.model`:** The name of the GenAI model a request is being made to. If the model is supplied by a vendor, then the value must be the exact name of the model requested. If the model is a fine-tuned custom model, the value should have a more specific name than the base model that's been fine-tuned.
+
+**[5] `server.port`:** When observed from the client side, and when communicating through an intermediary, `server.port` SHOULD represent the server port behind any intermediaries, for example proxies, if it's available.
+
+**[6] `gen_ai.usage.cost.source`:** Distinguishes cost values received in the response from cost values
 computed at recording time by the emitting component. See the enum
 member notes for the receive-vs-derive test.
-
-**[5] `gen_ai.request.model`:** The name of the GenAI model a request is being made to. If the model is supplied by a vendor, then the value must be the exact name of the model requested. If the model is a fine-tuned custom model, the value should have a more specific name than the base model that's been fine-tuned.
-
-**[6] `server.port`:** When observed from the client side, and when communicating through an intermediary, `server.port` SHOULD represent the server port behind any intermediaries, for example proxies, if it's available.
 
 **[7] `server.address`:** When observed from the client side, and when communicating through an intermediary, `server.address` SHOULD represent the server address behind any intermediaries, for example proxies, if it's available.
 

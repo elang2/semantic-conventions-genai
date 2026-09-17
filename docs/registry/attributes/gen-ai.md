@@ -69,7 +69,7 @@
 | <a id="gen-ai-usage-audio-output-tokens" href="#gen-ai-usage-audio-output-tokens">`gen_ai.usage.audio.output_tokens`</a> | ![Development](https://img.shields.io/badge/-development-blue) | int | The number of audio output tokens. [34] | `240` |
 | <a id="gen-ai-usage-cache-read-input-tokens" href="#gen-ai-usage-cache-read-input-tokens">`gen_ai.usage.cache_read.input_tokens`</a> | ![Development](https://img.shields.io/badge/-development-blue) | int | The number of input tokens served from a provider-managed cache. [35] | `50` |
 | <a id="gen-ai-usage-cache-write-input-tokens" href="#gen-ai-usage-cache-write-input-tokens">`gen_ai.usage.cache_write.input_tokens`</a> | ![Development](https://img.shields.io/badge/-development-blue) | int | The number of input tokens written to a provider-managed cache. [36] | `25` |
-| <a id="gen-ai-usage-cost-amount" href="#gen-ai-usage-cost-amount">`gen_ai.usage.cost.amount`</a> | ![Development](https://img.shields.io/badge/-development-blue) | double | The monetary cost of a single GenAI inference operation. [37] | `0.0023`; `0.015`; `0.42` |
+| <a id="gen-ai-usage-cost-amount" href="#gen-ai-usage-cost-amount">`gen_ai.usage.cost.amount`</a> | ![Development](https://img.shields.io/badge/-development-blue) | double | The monetary cost of a single GenAI operation. [37] | `0.0023`; `0.015`; `0.42` |
 | <a id="gen-ai-usage-cost-currency" href="#gen-ai-usage-cost-currency">`gen_ai.usage.cost.currency`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | ISO 4217 currency code for the cost value. [38] | `USD`; `EUR`; `GBP` |
 | <a id="gen-ai-usage-cost-source" href="#gen-ai-usage-cost-source">`gen_ai.usage.cost.source`</a> | ![Development](https://img.shields.io/badge/-development-blue) | string | The source of the cost value. [39] | `provider`; `local` |
 | <a id="gen-ai-usage-image-cache-read-input-tokens" href="#gen-ai-usage-image-cache-read-input-tokens">`gen_ai.usage.image.cache_read.input_tokens`</a> | ![Development](https://img.shields.io/badge/-development-blue) | int | The number of image input tokens served from a provider-managed cache. [40] | `128` |
@@ -346,13 +346,7 @@ the response, since doing so copies a field the client already received.
 When it is absent, only a component configured with pricing data can
 record it. A component with neither is **not expected to acquire pricing
 data in order to record cost**. Whether to maintain pricing data at all is
-the component's choice. When the response does not carry the value, the condition on this
-attribute is unmet, and the guidance below is what applies.
-
-When the condition on this attribute is not satisfied, instrumentations
-SHOULD still record the cost if they can determine it and its currency at
-recording time without an additional network request. Instrumentations are
-NOT expected to treat this attribute as opt-in in that case.
+the component's choice.
 
 The recorded amount reflects the pricing data in force at recording
 time and MUST NOT be recomputed against later pricing data. Backend
